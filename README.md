@@ -1,8 +1,7 @@
 # Grab
 
 This small framework has the goal to generate test data more efficient.
-It should reduce the boilerplate for tests arranging the test.
-There are `Plans` providing default values for a certain model.
+It reduces the boilerplate creating test data and provides reusable `Plans` which allow you to arrange tests depending on complex data structures with ease.
 
 ## Setup
 
@@ -16,20 +15,66 @@ $ yarn add grab
 
 1. Provide a _Plan_ describing your test data.
 2. Use the _Plan_ inside your test 
-
+3. Combine multiple _Plans_ creating complex data structures easily.
 
 ### 1. Provide a Plan
 
 ```typescript
+// your-model.ts
+
+export class YourModel {
+  yourProperty: string;
+}
+```
+
+```typescript
+// ./plan/for-your-model.ts
+
 import { Plan } from 'grab';
+import { YourModel} from '../<path-to-YourModel>';
 
 
+export class ForYourModel extends Plan<YourModel> {
+  constructor() {
+    super({
+      yourProperty: 'your value'
+    });
+  }
+}
 ```
 
 ### 2. Use the Plan
 
+```typescript
+// your-model.spec.ts
 
-## 
+import { Grab } from 'grab';
+
+describe('When using a plan', () => {
+  it('should be possible to create my very own test data', () => {
+    const plan = Grab.plan(ForYourModel);
+    const model = plan.model({ yourProperty: 'overwrite the default value' });
+
+    expect(model.yourProperty).toBe('overwrite the default value');
+  });
+});
+
+```
+
+### 3. Combine multiple Plans
+
+
+## File structure
+
+
+
+```bash
+|- test
+   |- plans
+      |- for-your-model.ts
+```
+
+## Have a look inside
 
 ### Plan
 > It is recommended to put all plans you create in a own directory.
@@ -86,11 +131,11 @@ const customer = customerPlan.model({ astName: 'Musk' });
 
 ## Generator
 
-In order to reduce the boilerplate of your test data even more the factory `G`
+In order to reduce the boilerplate of your test data even more the factory `Grab`
 can generate your Plans on the fly.
 
 ```typescript
-import { G } from './grab';
+import { Grab } from './grab';
 import { CustomerPlan } from './plans';
 
 const customer = Grab.plan(CustomerPlan).model();
