@@ -7,7 +7,7 @@ import json from 'rollup-plugin-json'
 
 const pkg = require('./package.json')
 
-const libraryName = 'g-rab'
+const libraryName = 'grab'
 
 export default {
   input: `src/${libraryName}.ts`,

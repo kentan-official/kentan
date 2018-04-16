@@ -1,4 +1,4 @@
-import { OverwritablePlan } from './overwritable-plan'
+import { OverwritablePlan } from './overwritable-plan';
 
 /**
  * Takes a Plan (@see Plan) and creates a instance of it.
@@ -10,7 +10,11 @@ import { OverwritablePlan } from './overwritable-plan'
  * const product = productPlan.model;
  */
 export class Grab {
+  /**
+   * Provides a plan based on the the given type token.
+   * @param plan Type token which is needed to instanciate the plan
+   */
   static plan<Model, Plan extends OverwritablePlan<Model>>(plan: new () => Plan): Plan {
-    return new plan()
+    return new plan();
   }
 }
