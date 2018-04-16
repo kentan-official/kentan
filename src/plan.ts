@@ -13,13 +13,13 @@ export declare type ModelFactory<T> = T;
  * @template T
  */
 export class Plan<T> implements OverwritablePlan<T> {
-  private _create: () => T;
+  private _createModel: () => T;
 
-  constructor(private _token: Constructable<T> | T, private _defaults?: T) {
+  constructor(private _token: T | Constructable<T>, defaults?: T) {
     if (typeof _token === 'object') {
-      this._create = this.createFromInstance(_token as T, _defaults);
+      this._createModel = this._createFromInstance(_token, defaults);
     } else {
-      this._create = this.constructInstance(_token as Constructable<T>, _defaults);
+      this._createModel = this._constructInstance(_token, defaults);
     }
   }
 
@@ -31,14 +31,14 @@ export class Plan<T> implements OverwritablePlan<T> {
    * @memberof Plan
    */
   model(overrides?: { [key in keyof T]?: T[key] }): T {
-    return Object.assign(this._create(), this._defaults, overrides);
+    return Object.assign(this._createModel(), overrides);
   }
 
-  private createFromInstance(model: T, _defaults?: T): () => T {
+  private _createFromInstance(model: T, _defaults?: T): () => T {
     return () => Object.assign(model, _defaults);
   }
 
-  private constructInstance(Model: Constructable<T>, _defaults?: T): () => T {
+  private _constructInstance(Model: Constructable<T>, _defaults?: T): () => T {
     return () => Object.assign(new Model(), _defaults);
   }
 }
