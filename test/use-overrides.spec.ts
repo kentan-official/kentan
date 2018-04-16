@@ -6,7 +6,7 @@ class WithProperty {
 
 class ForWithProperty extends Plan<WithProperty> {
   constructor() {
-    super({ myProperty: 'my default value' });
+    super(WithProperty, { myProperty: 'my default value' });
   }
 }
 

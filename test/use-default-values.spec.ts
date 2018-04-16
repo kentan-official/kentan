@@ -2,7 +2,11 @@ import { Grab, Plan } from '../src/grab';
 
 class Empty {}
 
-class ForEmpty extends Plan<Empty> {}
+class ForEmpty extends Plan<Empty> {
+  constructor() {
+    super(Empty);
+  }
+}
 
 describe('When a plan is requested', () => {
   let plan: Plan<Empty>;

@@ -10,7 +10,11 @@ import { OverwritablePlan } from './overwritable-plan';
  * @template T
  */
 export class Plan<T> implements OverwritablePlan<T> {
-  constructor(private defaultModel?: T) {}
+  _origin: T;
+
+  constructor(private _token: new () => T, private _defaults?: T) {
+    this._origin = Object.assign(new _token(), _defaults);
+  }
 
   /**
    * Creates a new instance of the model containing test data.
@@ -20,6 +24,6 @@ export class Plan<T> implements OverwritablePlan<T> {
    * @memberof Plan
    */
   model(overrides?: { [key in keyof T]?: T[key] }): T {
-    return Object.assign({}, this.defaultModel, overrides);
+    return Object.assign(new this._token(), this._defaults, overrides);
   }
 }

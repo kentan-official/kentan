@@ -10,7 +10,7 @@ class ModelB {
 
 class ForModelA extends Plan<ModelA> {
   constructor() {
-    super({
+    super(ModelA, {
       modelB: Grab.plan(ForModelB).model()
     });
   }
@@ -18,7 +18,7 @@ class ForModelA extends Plan<ModelA> {
 
 class ForModelB extends Plan<ModelB> {
   constructor() {
-    super({
+    super(ModelB, {
       someProperty: 'default value'
     });
   }
