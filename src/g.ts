@@ -1,4 +1,4 @@
-import { OverwritablePlan } from './overwritable-plan';
+import { OverwritablePlan } from './overwritable-plan'
 
 /**
  * Takes a Plan (@see Plan) and creates a instance of it.
@@ -9,8 +9,8 @@ import { OverwritablePlan } from './overwritable-plan';
  * const pruductPlan = G.rab(Plan.Product)
  * const product = productPlan.model;
  */
-export class G {
-  static rab<Model, Plan extends OverwritablePlan<Model>>(plan: (new () => Plan)): Plan  {
-      return new plan();
+export class Grab {
+  static plan<Model, Plan extends OverwritablePlan<Model>>(plan: new () => Plan): Plan {
+    return new plan()
   }
 }

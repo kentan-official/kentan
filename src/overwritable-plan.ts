@@ -6,5 +6,5 @@ export interface OverwritablePlan<T> {
   /**
    * Allow to override the default values of the model
    */
-  model(overrides?: { [key in keyof T]?: T[key] } ): T;
+  model(overrides?: { [key in keyof T]?: T[key] }): T
 }

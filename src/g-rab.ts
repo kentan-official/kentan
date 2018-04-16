@@ -1,2 +1,2 @@
-export * from './g';
-export * from './plan';
+export * from './g'
+export * from './plan'
