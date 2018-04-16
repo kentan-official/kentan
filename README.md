@@ -5,6 +5,8 @@ It reduces the boilerplate creating test data and provides reusable `Plans` whic
 
 ## Setup
 
+To get started with _Grab_ just install it with you preferred package manager.
+
 ```bash
 $ npm install grab
 # or
@@ -13,9 +15,11 @@ $ yarn add grab
 
 ## Usage
 
-1. Provide a _Plan_ describing your test data.
-2. Use the _Plan_ inside your test 
-3. Combine multiple _Plans_ creating complex data structures easily.
+Assuming you want to write a test depending of a class representing a data model on the client side you need to provide a `Plan`. In this structure you can provide some default values beeing used in your test.
+
+1.  Provide a _Plan_ describing your test data.
+2.  Use the _Plan_ inside your test
+3.  Combine multiple _Plans_ creating complex data structures easily.
 
 ### 1. Provide a Plan
 
@@ -31,8 +35,7 @@ export class YourModel {
 // ./plan/for-your-model.ts
 
 import { Plan } from 'grab';
-import { YourModel} from '../<path-to-YourModel>';
-
+import { YourModel } from '../<path-to-YourModel>';
 
 export class ForYourModel extends Plan<YourModel> {
   constructor() {
@@ -58,15 +61,71 @@ describe('When using a plan', () => {
     expect(model.yourProperty).toBe('overwrite the default value');
   });
 });
-
 ```
 
 ### 3. Combine multiple Plans
 
+```typescript
+// modal-a.ts
+
+class ModelA {
+  modelB: ModelB;
+}
+```
+
+```typescript
+// modal-b.ts
+
+class ModelB {
+  someProperty: string;
+}
+```
+
+```typescript
+// modal-a.plan.ts
+
+class ForModelA extends Plan<ModelA> {
+  constructor() {
+    super({
+      modelB: Grab.plan(ForModelB).model()
+    });
+  }
+}
+```
+
+```typescript
+// modal-b.plan.ts
+
+class ForModelB extends Plan<ModelB> {
+  constructor() {
+    super({
+      someProperty: 'default value'
+    });
+  }
+}
+```
+
+```typescript
+// model-a.spec.ts
+describe('using default values', () => {
+  it('should use a plan for "ModelB" to create plan for "ModalA"', () => {
+    const expected = new ForModelB().model().someProperty;
+    const plan = Grab.plan(ForModelA);
+
+    expect(plan.model().modelB.someProperty).toBe(expected);
+  });
+});
+
+describe('use overrides', () => {
+  it('should be possible to provide own test data', () => {
+    const modelA = Grab.plan(ForModelA).model({
+      modelB: Grab.plan(ForModelB).model({ someProperty: 'override' })
+    });
+  });
+});
+```
 
 ## File structure
-
-
 
 ```bash
 |- test
@@ -77,6 +136,7 @@ describe('When using a plan', () => {
 ## Have a look inside
 
 ### Plan
+
 > It is recommended to put all plans you create in a own directory.
 > This makes your test data easy to discover.
 
@@ -147,11 +207,10 @@ You still have the possibility to override custom values.
 import { G } from 'grab';
 import { CustomerPlan } from './plans';
 
-const customer = Grab.plan(CustomerPlan)
-  .model({
-    firstName: 'Laura',
-    lastName: 'Seiler'
-  });
+const customer = Grab.plan(CustomerPlan).model({
+  firstName: 'Laura',
+  lastName: 'Seiler'
+});
 ```
 
 ## Thanks
