@@ -15,14 +15,17 @@ export class Grab {
    * @param plan Type token which is needed to instanciate the plan
    */
   static plan<Model, Plan extends OverwritablePlan<Model>>(plan: new () => Plan): Plan {
-    throwIfNull(plan, 'Grab: Please provide a token for a class type extending "Plan<T>"');
+    throwIfNullOrUndefined(
+      plan,
+      'Grab: Please provide a token for a class type extending "Plan<T>"'
+    );
 
     return new plan();
   }
 }
 
-function throwIfNull(value: any, errorMessage: string) {
-  if (value === null) {
+function throwIfNullOrUndefined(value: any, errorMessage: string) {
+  if (!value) {
     throw new Error(errorMessage);
   }
 }

@@ -27,3 +27,11 @@ describe('When "null" is requested', () => {
     );
   });
 });
+
+describe('When "undefined" is requested', () => {
+  it('should raise an error', () => {
+    expect(() => Grab.plan(undefined)).toThrowError(
+      'Grab: Please provide a token for a class type extending "Plan<T>"'
+    );
+  });
+});
