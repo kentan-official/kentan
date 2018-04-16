@@ -10,7 +10,7 @@ class ForWithProperty extends Plan<WithProperty> {
   }
 }
 
-describe('When a plan provides initial data', () => {
+describe('When a plan provides default values', () => {
   describe('using the initial data', () => {
     it('should provide the initial test data', () => {
       const expected = new ForWithProperty().model().myProperty;
@@ -20,8 +20,8 @@ describe('When a plan provides initial data', () => {
     });
   });
 
-  describe('overwrite the initial data', () => {
-    it('should provide the overwrited test data', () => {
+  describe('overwrite the defaults', () => {
+    it('should provide the overwritten test data', () => {
       const expected = 'my new value';
       const overrides: WithProperty = { myProperty: expected };
       const model = Grab.plan(ForWithProperty).model(overrides);

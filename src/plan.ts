@@ -1,5 +1,8 @@
 import { OverwritablePlan } from './overwritable-plan';
 
+export declare type Constructable<T> = new () => T;
+export declare type ModelFactory<T> = T;
+
 /**
  * A Plan provides test data for a certain type of model.
  * It allows to override the default test data.
@@ -10,10 +13,14 @@ import { OverwritablePlan } from './overwritable-plan';
  * @template T
  */
 export class Plan<T> implements OverwritablePlan<T> {
-  _origin: T;
+  private _create: () => T;
 
-  constructor(private _token: new () => T, private _defaults?: T) {
-    this._origin = Object.assign(new _token(), _defaults);
+  constructor(private _token: Constructable<T> | T, private _defaults?: T) {
+    if (typeof _token === 'object') {
+      this._create = this.createFromInstance(_token as T, _defaults);
+    } else {
+      this._create = this.constructInstance(_token as Constructable<T>, _defaults);
+    }
   }
 
   /**
@@ -24,6 +31,14 @@ export class Plan<T> implements OverwritablePlan<T> {
    * @memberof Plan
    */
   model(overrides?: { [key in keyof T]?: T[key] }): T {
-    return Object.assign(new this._token(), this._defaults, overrides);
+    return Object.assign(this._create(), this._defaults, overrides);
+  }
+
+  private createFromInstance(model: T, _defaults?: T): () => T {
+    return () => Object.assign(model, _defaults);
+  }
+
+  private constructInstance(Model: Constructable<T>, _defaults?: T): () => T {
+    return () => Object.assign(new Model(), _defaults);
   }
 }

@@ -19,8 +19,12 @@ describe('When a plan is requested', () => {
     expect(plan).toBeDefined();
   });
 
-  it('should provide an empty model', () => {
+  it('should yield an empty model', () => {
     expect(plan.model()).toBeDefined();
+  });
+
+  it('should yield an instance of the empty model', () => {
+    expect(plan.model()).toBeInstanceOf(Empty);
   });
 });
 
