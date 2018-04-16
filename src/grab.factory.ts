@@ -24,6 +24,13 @@ export class Grab {
   }
 }
 
+/**
+ * Checks if the passed value is null or undefined.
+ * If true it raises an error.
+ *
+ * @param {*} value The value which is going to be checked
+ * @param {string} errorMessage The error message thrown if the value is null or undefined.
+ */
 function throwIfNullOrUndefined(value: any, errorMessage: string) {
   if (!value) {
     throw new Error(errorMessage);
