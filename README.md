@@ -260,7 +260,7 @@ const customer = ForCustomer.model({ astName: 'Musk' });
 //                                   ^-- error
 ```
 
-## Thanks
+## Credits
 
 This project uses the setup provided by [TypeScript Library Starter](https://github.com/alexjoverm/typescript-library-starter.git).
 It is really easy to get start with.
