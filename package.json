@@ -65,6 +65,15 @@
     "collectCoverage": true,
     "mapCoverage": true
   },
+  "release": {
+    "analyzeCommits": {
+      "preset": "angular",
+      "releaseRules": [
+        { "type": "docs", "scope": "README", "release": "patch" },
+        { "type": "refactor", "release": "patch" }
+      ]
+    }
+  },
   "devDependencies": {
     "@types/jest": "^22.0.0",
     "@types/node": "^9.3.0",
