@@ -200,9 +200,10 @@ Now you have a way to organize your test data by adding _Sketches_.
 You can put them together into one directory if you like.
 
 ```bash
-|- test
-   |- sketches
-      |- for-your-model.ts
+.
+└── test
+    └── sketches
+        └── for-your-model.ts
 ```
 
 ## Sketches are strictly typed
