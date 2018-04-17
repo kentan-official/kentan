@@ -68,7 +68,7 @@ export class ForYourModel extends Sketch<YourModel> {
 After you set up the sketch you can use the factory called `Kentan`.
 This makes it easy to create sketches on the fly.
 
-Just call `sketch()` of `Kentan` and pass the type of the sketch you want to create.
+Just call `sketch()` of _Kentan_ and pass the type of the sketch you want to create.
 By calling `model()` you can access the generated model.
 You are also allowed to pass a set of properties which overwrite the default values.
 
@@ -89,7 +89,7 @@ describe('When using a sketch', () => {
 
 ### 3. Combine multiple Sketches
 
-Now we come to the main idea of `Kentan`. It enables you to specify lots of tiny sketches which can be put together to construct complex data structures.
+Now we come to the main idea of _Kentan_. It enables you to specify lots of tiny sketches which can be put together to construct complex data structures.
 
 The following snippets show you a `Customer` that depends on `Address`.
 
@@ -171,13 +171,13 @@ describe('use overrides', () => {
 
 ## Use existing model instances
 
-If you deal with a model which defines a `constructor` having multiple dependency you can use a tiny helper of `Kentan` called `useInstance<T>(model:T):T`. This allows you to provide your very own setup of a model instance and pass it to `Kentan`;
+If you deal with a model which defines a `constructor` having multiple dependency you can use a tiny helper of _Kentan_ called `useInstance<T>(model:T):T`. This allows you to provide your very own setup of a model instance and pass it to _Kentan_;
 
 ```typescript
 // your-model.ts
 
 export class YourModel {
-  constructor(public paramter: string) {}
+  constructor(public parameter: string) {}
 }
 ```
 
