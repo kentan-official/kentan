@@ -1,4 +1,4 @@
-# Kentan
+# Kentan [![Coverage Status](https://coveralls.io/repos/github/GregOnNet/kentan/badge.svg?branch=master)](https://coveralls.io/github/GregOnNet/kentan?branch=master)
 
 This small framework has the goal to provide a more efficient way to generate test data.
 It reduces the boilerplate and provides reusable `Sketches` which allow you to arrange tests with ease even if you need to setup complex and deeply nested data structures.
