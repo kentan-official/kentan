@@ -1,7 +1,7 @@
 # Kentan [![Coverage Status](https://coveralls.io/repos/github/GregOnNet/kentan/badge.svg?branch=master)](https://coveralls.io/github/GregOnNet/kentan?branch=master)
 
-This small framework has the goal to provide a more efficient way to generate test data.
-It reduces the boilerplate and provides reusable `Sketches` which allow you to arrange tests with ease even if you need to setup complex and deeply nested data structures.
+Based on TypeScript classes & interfaces this framework has the goal to provide a more efficient way to generate test data.
+It reduces the boilerplate and provides reusable _Sketches_ which allow you to arrange tests with ease even if you need to setup complex and deeply nested data structures.
 
 ## Setup
 
@@ -16,7 +16,7 @@ $ yarn add kentan
 ## Usage
 
 Assuming you want to write a test depending of a class representing a data model on the client side you need to provide a `Sketch`.
-With this structure you can provide some default values beeing used and reused in different tests.
+With this structure you can provide some default values being used and reused in different tests.
 
 ### 1. Declare the Sketch
 
@@ -56,8 +56,8 @@ export class ForYourModel extends Sketch<YourModel> {
 }
 ```
 
-> **Please Note** The shown sample works for model classes habving a parameterless constructor.
-> If you need to instanciate a model with a more complex constructor please refer to the section [Use existing model instances](#use-existing-model-instances).
+> **Please Note** The shown sample works for model classes having a parameterless constructor.
+> If you need to instantiate a model with a more complex constructor please refer to the section [Use existing model instances](#use-existing-model-instances).
 
 ### 2. Use the Sketch
 
@@ -196,7 +196,7 @@ export class ForYourModel extends Sketch<YourModel> {
 > It is recommended to put all sketches you create in a own directory.
 > This makes your test data easy to discover.
 
-Now you have a way to organize your test data by adding _Sketches_.
+Now you have a way to organize your test data by adding Sketches.
 You can put them together into one directory if you like.
 
 ```bash
@@ -208,7 +208,7 @@ You can put them together into one directory if you like.
 
 ## Sketches are strictly typed
 
-To define a sketch make use of the base class `Sketch`.
+To define a sketch make use of the base class _Sketch_.
 Then you need to implement a constructor.
 As mentioned before you have to make a super call to pass some default values based on your model.
 
@@ -228,7 +228,7 @@ export class ForCustomer extends Sketch<Customer> {
 }
 ```
 
-After creating a sketch you are able to access the generated test data by using the mehtod `model()`;
+After creating a sketch you are able to access the generated test data by using the method `model()`;
 
 ```typescript
 import { ForCustomer } from './sketches';
@@ -237,7 +237,7 @@ const ForCustomer = new ForCustomer();
 const customer = ForCustomer.model();
 ```
 
-A sketch also allows you to override the default values. The mehtod `model(overrides?: T): T` takes an optional parameter
+A sketch also allows you to override the default values. The method `model(overrides?: T): T` takes an optional parameter
 allowing you to specify concrete test data.
 
 ```typescript
@@ -263,4 +263,4 @@ This project uses the setup provided by [TypeScript Library Starter](https://git
 It is really easy to get start with.
 You will get a complete infrastructure allowing you to write tests, bundle your library for production and publish your package to the npm registry.
 
-That project is a big time saver! So thanks!
+That project is a big time saver. Thank you so much!
