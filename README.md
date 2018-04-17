@@ -1,7 +1,7 @@
 # Grab
 
-This small framework has the goal to generate test data more efficient.
-It reduces the boilerplate creating test data and provides reusable `Plans` which allow you to arrange tests depending on complex data structures with ease.
+This small framework has the goal to provide a more efficient way to generate test data.
+It reduces the boilerplate and provides reusable `Plans` which allow you to arrange tests with ease even if you need to setup complex and deeply nested data structures.
 
 ## Setup
 
