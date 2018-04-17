@@ -1,4 +1,4 @@
-import { Plan, Grab } from '../src/grab';
+import { Sketch, Kentan } from '../src/kentan';
 
 class ModelA {
   modelB: ModelB;
@@ -8,15 +8,15 @@ class ModelB {
   someProperty: string;
 }
 
-class ForModelA extends Plan<ModelA> {
+class ForModelA extends Sketch<ModelA> {
   constructor() {
     super(ModelA, {
-      modelB: Grab.plan(ForModelB).model()
+      modelB: Kentan.sketch(ForModelB).model()
     });
   }
 }
 
-class ForModelB extends Plan<ModelB> {
+class ForModelB extends Sketch<ModelB> {
   constructor() {
     super(ModelB, {
       someProperty: 'default value'
@@ -28,7 +28,7 @@ describe('When a "ModelA" has a property of type "ModelB"', () => {
   describe('using default values', () => {
     it('should use a plan for "ModelB" to create plan for "ModalA"', () => {
       const expected = new ForModelB().model().someProperty;
-      const plan = Grab.plan(ForModelA);
+      const plan = Kentan.sketch(ForModelA);
 
       expect(plan.model().modelB.someProperty).toBe(expected);
     });
@@ -38,8 +38,8 @@ describe('When a "ModelA" has a property of type "ModelB"', () => {
     it('should be possible to provide own test data', () => {
       const expected = 'generated on the fly';
 
-      const modelA = Grab.plan(ForModelA).model({
-        modelB: Grab.plan(ForModelB).model({ someProperty: expected })
+      const modelA = Kentan.sketch(ForModelA).model({
+        modelB: Kentan.sketch(ForModelB).model({ someProperty: expected })
       });
 
       expect(modelA.modelB.someProperty).toBe(expected);

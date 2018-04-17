@@ -1,4 +1,4 @@
-import { OverwritablePlan } from './overwritable-plan';
+import { OverwritablePlan } from './overwritable-sketch';
 
 /**
  * Takes a Plan (@see Plan) and creates a instance of it.
@@ -9,12 +9,12 @@ import { OverwritablePlan } from './overwritable-plan';
  * const pruductPlan = G.rab(Plan.Product)
  * const product = productPlan.model;
  */
-export class Grab {
+export class Kentan {
   /**
    * Provides a plan based on the the given type token.
    * @param plan Type token which is needed to instanciate the plan
    */
-  static plan<Model, Plan extends OverwritablePlan<Model>>(plan: new () => Plan): Plan {
+  static sketch<Model, Plan extends OverwritablePlan<Model>>(plan: new () => Plan): Plan {
     throwIfNullOrUndefined(
       plan,
       'Grab: Please provide a token for a class type extending "Plan<T>"'

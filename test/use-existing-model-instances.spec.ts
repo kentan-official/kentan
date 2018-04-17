@@ -1,5 +1,4 @@
-import { Plan } from '../src/plan';
-import { useInstance } from '../src/grab';
+import { Sketch, useInstance } from '../src/kentan';
 
 export class HasConstructorParameter {
   constructor(public paramter: string) {}
@@ -9,7 +8,7 @@ export class HasConstructorParameter {
   }
 }
 
-export class ForHasConstructorParameter extends Plan<HasConstructorParameter> {}
+export class ForHasConstructorParameter extends Sketch<HasConstructorParameter> {}
 
 describe("When a model class has parameters in it's constructor", () => {
   it('should provide an instance of that class', () => {

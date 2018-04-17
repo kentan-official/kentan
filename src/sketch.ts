@@ -1,4 +1,4 @@
-import { OverwritablePlan } from './overwritable-plan';
+import { OverwritablePlan } from './overwritable-sketch';
 
 export declare type Constructable<T> = new () => T;
 export declare type ModelFactory<T> = T;
@@ -12,7 +12,7 @@ export declare type ModelFactory<T> = T;
  * @implements {OverwritablePlan<T>}
  * @template T
  */
-export class Plan<T> implements OverwritablePlan<T> {
+export class Sketch<T> implements OverwritablePlan<T> {
   private _createModel: () => T;
 
   constructor(private _token: T | Constructable<T>, defaults?: T) {

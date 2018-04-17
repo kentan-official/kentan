@@ -1,26 +1,26 @@
-# Grab
+# Kentan
 
 This small framework has the goal to provide a more efficient way to generate test data.
-It reduces the boilerplate and provides reusable `Plans` which allow you to arrange tests with ease even if you need to setup complex and deeply nested data structures.
+It reduces the boilerplate and provides reusable `Sketches` which allow you to arrange tests with ease even if you need to setup complex and deeply nested data structures.
 
 ## Setup
 
-To get started with _Grab_ just install it with you preferred package manager.
+To get started with _Kentan_ just install it with you preferred package manager.
 
 ```bash
-$ npm install grab
+$ npm install kentan
 # or
-$ yarn add grab
+$ yarn add kentan
 ```
 
 ## Usage
 
-Assuming you want to write a test depending of a class representing a data model on the client side you need to provide a `Plan`.
+Assuming you want to write a test depending of a class representing a data model on the client side you need to provide a `Sketch`.
 With this structure you can provide some default values beeing used and reused in different tests.
 
-### 1. Declare the Plan
+### 1. Declare the Sketch
 
-First you need to provide such a plan for on of you data models.
+First you need to provide such a sketch for on of you data models.
 
 ```typescript
 // your-model.ts
@@ -30,7 +30,7 @@ export class YourModel {
 }
 ```
 
-Every concrete _Plan_ extends a base class `Plan<T>`.
+Every concrete _Sketch_ extends a base class `Sketch<T>`.
 Inside the constructor a _super_ call is made which takes two parameters:
 
 1.  The type token of the model you want to create
@@ -39,12 +39,12 @@ Inside the constructor a _super_ call is made which takes two parameters:
 The token is needed to be able to create an instance of the model.
 
 ```typescript
-// ./plan/for-your-model.ts
+// ./sketch/for-your-model.ts
 
-import { Plan } from 'grab';
+import { Sketch } from 'kentan';
 import { YourModel } from '../<path-to-YourModel>';
 
-export class ForYourModel extends Plan<YourModel> {
+export class ForYourModel extends Sketch<YourModel> {
   constructor() {
     super(
       // Token
@@ -59,33 +59,33 @@ export class ForYourModel extends Plan<YourModel> {
 > **Please Note** The shown sample works for model classes habving a parameterless constructor.
 > If you need to instanciate a model with a more complex constructor please refer to the section [Use existing model instances](#use-existing-model-instances).
 
-### 2. Use the Plan
+### 2. Use the Sketch
 
-After you set up the plan you can use the factory called `?????`.
-This makes it easy to create plans on the fly.
+After you set up the sketch you can use the factory called `Kentan`.
+This makes it easy to create sketches on the fly.
 
-Just call `?????()` of `?????` and pass the type of the plan you want to create.
+Just call `sketch()` of `Kentan` and pass the type of the sketch you want to create.
 By calling `model()` you can access the generated model.
 You are also allowed to pass a set of properties which overwrite the default values.
 
 ```typescript
 // your-model.spec.ts
 
-import { Grab } from 'grab';
+import { Kentan } from 'kentan';
 
-describe('When using a plan', () => {
+describe('When using a sketch', () => {
   it('should be possible to create my very own test data', () => {
-    const plan = Grab.plan(ForYourModel);
-    const model = plan.model({ yourProperty: 'overwrite the default value' });
+    const sketch = Kentan.sketch(ForYourModel);
+    const model = sketch.model({ yourProperty: 'overwrite the default value' });
 
     expect(model.yourProperty).toBe('overwrite the default value');
   });
 });
 ```
 
-### 3. Combine multiple Plans
+### 3. Combine multiple Sketches
 
-Now we come to the main idea of `?????`. It enables you to specify lots of tiny plans which can be put together to construct complex data structures.
+Now we come to the main idea of `Kentan`. It enables you to specify lots of tiny sketches which can be put together to construct complex data structures.
 
 The following snippets show you a `ModelA` that depends on another `ModelB`.
 
@@ -105,14 +105,14 @@ class ModelB {
 }
 ```
 
-For each of these models a _Plan_ can be created.
-The cool thing is that you can use a _Plan_ as building block for other Plans.
-After creating a _Plan_ for `ModelB` it can be used in the _Plan_ for `ModelA`.
+For each of these models a _Sketch_ can be created.
+The cool thing is that you can use a _Sketch_ as building block for other Sketches.
+After creating a _Sketch_ for `ModelB` it can be used in the _Sketch_ for `ModelA`.
 
 ```typescript
-// modal-b.plan.ts
+// modal-b.sketch.ts
 
-class ForModelB extends Plan<ModelB> {
+class ForModelB extends Sketch<ModelB> {
   constructor() {
     super({
       someProperty: 'default value'
@@ -121,18 +121,18 @@ class ForModelB extends Plan<ModelB> {
 }
 ```
 
-To reuse a plan you simply need to import `????` and the _Plan_ for `ModelB`.
+To reuse a sketch you simply need to import `Kentan` and the _Sketch_ for `ModelB`.
 
 ```typescript
-// modal-a.plan.ts
-import { Grab } from 'grab';
-import { ForModelB } from './for-model-b.plan';
+// modal-a.sketch.ts
+import { Kentan } from 'kentan';
+import { ForModelB } from './for-model-b.sketch';
 
 
-class ForModelA extends Plan<ModelA> {
+class ForModelA extends Sketch<ModelA> {
   constructor() {
     super({
-      modelB: Grab.plan(ForModelB).model();
+      modelB: Kentan.sketch(ForModelB).model();
     });
   }
 }
@@ -144,11 +144,11 @@ Now you have the possibility to use the provided test data.
 ```typescript
 // model-a.spec.ts
 describe('using default values', () => {
-  it('should use a plan for "ModelB" to create plan for "ModalA"', () => {
+  it('should use a sketch for "ModelB" to create sketch for "ModalA"', () => {
     const expected = new ForModelB().model().someProperty;
-    const plan = Grab.plan(ForModelA);
+    const sketch = Kentan.sketch(ForModelA);
 
-    expect(plan.model().modelB.someProperty).toBe(expected);
+    expect(sketch.model().modelB.someProperty).toBe(expected);
   });
 });
 ```
@@ -158,8 +158,8 @@ But you are also allowed to overwrite the specific values.
 ```typescript
 describe('use overrides', () => {
   it('should be possible to provide own test data', () => {
-    const modelA = Grab.plan(ForModelA).model({
-      modelB: Grab.plan(ForModelB).model({ someProperty: 'override' })
+    const modelA = Kentan.sketch(ForModelA).model({
+      modelB: Kentan.sketch(ForModelB).model({ someProperty: 'override' })
     });
   });
 });
@@ -167,7 +167,7 @@ describe('use overrides', () => {
 
 ## Use existing model instances
 
-If you deal with a model which defines a `constructor` having multiple dependency you can use a tiny helper of `?????` called `useInstance<T>(model:T):T`. This allows you to provide your very own setup of a model instance and pass it to `?????`;
+If you deal with a model which defines a `constructor` having multiple dependency you can use a tiny helper of `Kentan` called `useInstance<T>(model:T):T`. This allows you to provide your very own setup of a model instance and pass it to `Kentan`;
 
 ```typescript
 // your-model.ts
@@ -178,10 +178,10 @@ export class YourModel {
 ```
 
 ```typescript
-// for-your-model.plan.ts
-import { Plan, useInstance } from 'grab';
+// for-your-model.sketch.ts
+import { Sketch, useInstance } from 'kentan';
 
-export class ForYourModel extends Plan<YourModel> {
+export class ForYourModel extends Sketch<YourModel> {
   private static _model = new YourModel('default');
 
   constructor() {
@@ -193,31 +193,31 @@ export class ForYourModel extends Plan<YourModel> {
 
 ## File structure
 
-> It is recommended to put all plans you create in a own directory.
+> It is recommended to put all sketches you create in a own directory.
 > This makes your test data easy to discover.
 
-Now you have a way to organize your test data by adding _Plans_.
+Now you have a way to organize your test data by adding _Sketches_.
 You can put them together into one directory if you like.
 
 ```bash
 |- test
-   |- plans
+   |- sketches
       |- for-your-model.ts
 ```
 
-## Plans are strictly typed
+## Sketches are strictly typed
 
-To define a plan make use of the base class `Plan`.
+To define a sketch make use of the base class `Sketch`.
 Then you need to implement a constructor.
 As mentioned before you have to make a super call to pass some default values based on your model.
 
 > **No worries** the constructor is typed meaning that you get informed if you pass an invalid object.
 
 ```typescript
-import { Plan } from 'grab';
+import { Sketch } from 'kentan';
 import { Customer } from './models';
 
-export class ForCustomer extends Plan<Customer> {
+export class ForCustomer extends Sketch<Customer> {
   constructor() {
     super(Customer, {
       firstName: 'Steven',
@@ -227,20 +227,20 @@ export class ForCustomer extends Plan<Customer> {
 }
 ```
 
-After creating a plan you are able to access the generated test data by using the mehtod `model()`;
+After creating a sketch you are able to access the generated test data by using the mehtod `model()`;
 
 ```typescript
-import { ForCustomer } from './plans';
+import { ForCustomer } from './sketches';
 
 const ForCustomer = new ForCustomer();
 const customer = ForCustomer.model();
 ```
 
-A plan also allows you to override the default values. The mehtod `model(overrides?: T): T` takes an optional parameter
+A sketch also allows you to override the default values. The mehtod `model(overrides?: T): T` takes an optional parameter
 allowing you to specify concrete test data.
 
 ```typescript
-import { ForCustomer } from './plans';
+import { ForCustomer } from './sketches';
 
 const ForCustomer = new ForCustomer();
 const customer = ForCustomer.model({ firstName: 'Elon' });
@@ -249,7 +249,7 @@ const customer = ForCustomer.model({ firstName: 'Elon' });
 > **Notice** that the method `model()` is typed which saves you from passing invalid properties.
 
 ```typescript
-import { ForCustomer } from './plans';
+import { ForCustomer } from './sketches/for-customer';
 
 const ForCustomer = new ForCustomer();
 const customer = ForCustomer.model({ astName: 'Musk' });

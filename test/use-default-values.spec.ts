@@ -1,18 +1,18 @@
-import { Grab, Plan } from '../src/grab';
+import { Kentan, Sketch } from '../src/kentan';
 
 class Empty {}
 
-class ForEmpty extends Plan<Empty> {
+class ForEmpty extends Sketch<Empty> {
   constructor() {
     super(Empty);
   }
 }
 
 describe('When a plan is requested', () => {
-  let plan: Plan<Empty>;
+  let plan: Sketch<Empty>;
 
   beforeEach(() => {
-    plan = Grab.plan(ForEmpty);
+    plan = Kentan.sketch(ForEmpty);
   });
 
   it('should yield the desired plan', () => {
@@ -30,7 +30,7 @@ describe('When a plan is requested', () => {
 
 describe('When "null" is requested', () => {
   it('should raise an error', () => {
-    expect(() => Grab.plan(null)).toThrowError(
+    expect(() => Kentan.sketch(null)).toThrowError(
       'Grab: Please provide a token for a class type extending "Plan<T>"'
     );
   });
@@ -38,7 +38,7 @@ describe('When "null" is requested', () => {
 
 describe('When "undefined" is requested', () => {
   it('should raise an error', () => {
-    expect(() => Grab.plan(undefined)).toThrowError(
+    expect(() => Kentan.sketch(undefined)).toThrowError(
       'Grab: Please provide a token for a class type extending "Plan<T>"'
     );
   });

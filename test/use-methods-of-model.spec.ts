@@ -1,4 +1,4 @@
-import { Grab, Plan } from '../src/grab';
+import { Kentan, Sketch } from '../src/kentan';
 
 class ContainParameterlessMethod {
   foo(): string {
@@ -6,7 +6,7 @@ class ContainParameterlessMethod {
   }
 }
 
-class ForContainParameterlessMethod extends Plan<ContainParameterlessMethod> {
+class ForContainParameterlessMethod extends Sketch<ContainParameterlessMethod> {
   constructor() {
     super(ContainParameterlessMethod);
   }
@@ -14,7 +14,7 @@ class ForContainParameterlessMethod extends Plan<ContainParameterlessMethod> {
 
 describe('When a method of the model is called', () => {
   it('should execute the method', () => {
-    const model = Grab.plan(ForContainParameterlessMethod).model();
+    const model = Kentan.sketch(ForContainParameterlessMethod).model();
     expect(true).toBe(true);
   });
 });
