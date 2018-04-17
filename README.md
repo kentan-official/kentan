@@ -87,52 +87,52 @@ describe('When using a sketch', () => {
 
 Now we come to the main idea of `Kentan`. It enables you to specify lots of tiny sketches which can be put together to construct complex data structures.
 
-The following snippets show you a `ModelA` that depends on another `ModelB`.
+The following snippets show you a `Customer` that depends on `Address`.
 
 ```typescript
 // modal-a.ts
 
-class ModelA {
-  modelB: ModelB;
+class Customer {
+  address: Address;
 }
 ```
 
 ```typescript
 // modal-b.ts
 
-class ModelB {
-  someProperty: string;
+class Address {
+  street: string;
 }
 ```
 
 For each of these models a _Sketch_ can be created.
 The cool thing is that you can use a _Sketch_ as building block for other Sketches.
-After creating a _Sketch_ for `ModelB` it can be used in the _Sketch_ for `ModelA`.
+After creating a _Sketch_ for `Address` it can be used in the _Sketch_ for `Customer`.
 
 ```typescript
 // modal-b.sketch.ts
 
-class ForModelB extends Sketch<ModelB> {
+class ForAddress extends Sketch<Address> {
   constructor() {
     super({
-      someProperty: 'default value'
+      street: '22B Bakerstreet'
     });
   }
 }
 ```
 
-To reuse a sketch you simply need to import `Kentan` and the _Sketch_ for `ModelB`.
+To reuse a sketch you simply need to import `Kentan` and the _Sketch_ for `Address`.
 
 ```typescript
 // modal-a.sketch.ts
 import { Kentan } from 'kentan';
-import { ForModelB } from './for-model-b.sketch';
+import { ForAddress } from './for-model-b.sketch';
 
 
-class ForModelA extends Sketch<ModelA> {
+class ForCustomer extends Sketch<Customer> {
   constructor() {
     super({
-      modelB: Kentan.sketch(ForModelB).model();
+      address: Kentan.sketch(ForAddress).model();
     });
   }
 }
@@ -144,11 +144,11 @@ Now you have the possibility to use the provided test data.
 ```typescript
 // model-a.spec.ts
 describe('using default values', () => {
-  it('should use a sketch for "ModelB" to create sketch for "ModalA"', () => {
-    const expected = new ForModelB().model().someProperty;
-    const sketch = Kentan.sketch(ForModelA);
+  it('should use a sketch for "Address" to create sketch for "ModalA"', () => {
+    const expected = new ForAddress().model().street;
+    const sketch = Kentan.sketch(ForCustomer);
 
-    expect(sketch.model().modelB.someProperty).toBe(expected);
+    expect(sketch.model().address.street).toBe(expected);
   });
 });
 ```
@@ -158,8 +158,8 @@ But you are also allowed to overwrite the specific values.
 ```typescript
 describe('use overrides', () => {
   it('should be possible to provide own test data', () => {
-    const modelA = Kentan.sketch(ForModelA).model({
-      modelB: Kentan.sketch(ForModelB).model({ someProperty: 'override' })
+    const modelA = Kentan.sketch(ForCustomer).model({
+      address: Kentan.sketch(ForAddress).model({ street: 'override' })
     });
   });
 });
