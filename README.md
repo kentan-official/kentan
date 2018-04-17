@@ -191,7 +191,7 @@ export class ForYourModel extends Sketch<YourModel> {
 ```
 
 
-## File structure
+## Organize sketches in your project
 
 > It is recommended to put all sketches you create in a own directory.
 > This makes your test data easy to discover.
