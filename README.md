@@ -246,7 +246,7 @@ const ForCustomer = new ForCustomer();
 const customer = ForCustomer.model({ firstName: 'Elon' });
 ```
 
-> **Notice** that the method `model()` is typed which saves you from passing invalid properties.
+> **Notice** that the method `model()` is typed which saves you from passing invalid property names.
 
 ```typescript
 import { ForCustomer } from './sketches/for-customer';
