@@ -1,4 +1,4 @@
-# Kentan 
+# Kentan
 
 [![Build Status](https://travis-ci.org/GregOnNet/kentan.svg?branch=master)](https://travis-ci.org/GregOnNet/kentan)
 [![Coverage Status](https://coveralls.io/repos/github/GregOnNet/kentan/badge.svg?branch=master)](https://coveralls.io/github/GregOnNet/kentan?branch=master)
@@ -167,6 +167,17 @@ describe('use overrides', () => {
     });
   });
 });
+```
+
+## Set certain properties in the data structure
+
+Sometimes you do not want to overwrite whole parts of the data structure but one single property.
+_Kentan_ allows you to do this as well! You can use the method _set_ expecting a _map_-Function which allows you to overwrite a certain value.
+
+```typescript
+const sketch = Kentan.sketch(ForCustomer);
+const customerSketch = sketch.set(m => (m.some.thing.nested.inside = expected));
+const customer: Customer = customerSketch.model();
 ```
 
 ## Use existing model instances
