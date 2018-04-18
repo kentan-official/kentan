@@ -14,10 +14,12 @@ export class Kentan {
    * Provides a plan based on the the given type token.
    * @param plan Type token which is needed to instanciate the plan
    */
-  static sketch<Model, Plan extends OverwritablePlan<Model>>(plan: new () => Plan): Plan {
+  static sketch<Model, Plan extends OverwritablePlan<Model>>(
+    plan: new () => Plan
+  ): Plan {
     throwIfNullOrUndefined(
       plan,
-      'Grab: Please provide a token for a class type extending "Plan<T>"'
+      'Kentan: Please provide a token for a class type extending "Plan<T>"'
     );
 
     return new plan();

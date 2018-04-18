@@ -31,7 +31,7 @@ describe('When a plan is requested', () => {
 describe('When "null" is requested', () => {
   it('should raise an error', () => {
     expect(() => Kentan.sketch(null)).toThrowError(
-      'Grab: Please provide a token for a class type extending "Plan<T>"'
+      'Kentan: Please provide a token for a class type extending "Plan<T>"'
     );
   });
 });
@@ -39,7 +39,7 @@ describe('When "null" is requested', () => {
 describe('When "undefined" is requested', () => {
   it('should raise an error', () => {
     expect(() => Kentan.sketch(undefined)).toThrowError(
-      'Grab: Please provide a token for a class type extending "Plan<T>"'
+      'Kentan: Please provide a token for a class type extending "Plan<T>"'
     );
   });
 });
