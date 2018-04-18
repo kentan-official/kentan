@@ -1,4 +1,4 @@
-import { OverwritablePlan, OverwriteFn } from './overwritable-sketch';
+import { OverwritableSketch, OverwriteFn } from './overwritable-sketch';
 
 export declare type Constructable<T> = new () => T;
 export declare type ModelFactory<T> = T;
@@ -12,7 +12,7 @@ export declare type ModelFactory<T> = T;
  * @implements {OverwritablePlan<T>}
  * @template T
  */
-export class Sketch<T> implements OverwritablePlan<T> {
+export class Sketch<T> implements OverwritableSketch<T> {
   private _createModel: () => T;
 
   constructor(private _token: T | Constructable<T>, defaults?: T) {
@@ -23,7 +23,7 @@ export class Sketch<T> implements OverwritablePlan<T> {
     }
   }
 
-  set(map: OverwriteFn<T>): OverwritablePlan<T> {
+  set(map: OverwriteFn<T>): OverwritableSketch<T> {
     const model = this._apply(map, this._createModel());
     return new Sketch(this._token, model);
   }

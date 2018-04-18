@@ -1,4 +1,4 @@
-import { OverwritablePlan } from './overwritable-sketch';
+import { OverwritableSketch } from './overwritable-sketch';
 
 /**
  * Takes a Plan (@see Plan) and creates a instance of it.
@@ -14,7 +14,7 @@ export class Kentan {
    * Provides a plan based on the the given type token.
    * @param plan Type token which is needed to instanciate the plan
    */
-  static sketch<Model, Plan extends OverwritablePlan<Model>>(
+  static sketch<Model, Plan extends OverwritableSketch<Model>>(
     plan: new () => Plan
   ): Plan {
     throwIfNullOrUndefined(
