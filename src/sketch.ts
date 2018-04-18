@@ -1,4 +1,4 @@
-import { OverwritablePlan } from './overwritable-sketch';
+import { OverwritablePlan, OverwriteFn } from './overwritable-sketch';
 
 export declare type Constructable<T> = new () => T;
 export declare type ModelFactory<T> = T;
@@ -23,6 +23,11 @@ export class Sketch<T> implements OverwritablePlan<T> {
     }
   }
 
+  set(map: OverwriteFn<T>): OverwritablePlan<T> {
+    const model = this._apply(map, this._createModel());
+    return new Sketch(this._token, model);
+  }
+
   /**
    * Creates a new instance of the model containing test data.
    *
@@ -40,5 +45,14 @@ export class Sketch<T> implements OverwritablePlan<T> {
 
   private _constructInstance(Model: Constructable<T>, _defaults?: T): () => T {
     return () => Object.assign(new Model(), _defaults);
+  }
+
+  private _apply(map: OverwriteFn<T>, model: T): T {
+    try {
+      map(model);
+      return model;
+    } catch (err) {
+      throw new Error(`Kentan: ${err.message}`);
+    }
   }
 }
