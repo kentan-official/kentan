@@ -12,9 +12,9 @@ It reduces the boilerplate and provides reusable _Sketches_ which allow you to a
 To get started with _Kentan_ just install it with you preferred package manager.
 
 ```bash
-$ npm install kentan
+$ npm install -D kentan
 # or
-$ yarn add kentan
+$ yarn add -D kentan
 ```
 
 ## Usage
