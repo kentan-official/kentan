@@ -28,6 +28,14 @@ export class Sketch<T> implements OverwritableSketch<T> {
     return new Sketch(this._token, model);
   }
 
+  get<U>(selector: (model: T) => U): U {
+    try {
+      return selector(this._createModel());
+    } catch (err) {
+      throw new Error(`Kentan: ${err.message}`);
+    }
+  }
+
   /**
    * Creates a new instance of the model containing test data.
    *

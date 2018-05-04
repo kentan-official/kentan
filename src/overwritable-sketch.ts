@@ -11,4 +11,6 @@ export interface OverwritableSketch<T> {
   model(overrides?: { [key in keyof T]?: T[key] }): T;
 
   set(map: OverwriteFn<T>): OverwritableSketch<T>;
+
+  get<U>(selector: (model: T) => U): U;
 }
