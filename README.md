@@ -94,7 +94,7 @@ Now we come to the main idea of _Kentan_. It enables you to specify lots of tiny
 The following snippets show you a `Customer` that depends on `Address`.
 
 ```typescript
-// modal-a.ts
+// model-a.ts
 
 class Customer {
   address: Address;
@@ -102,7 +102,7 @@ class Customer {
 ```
 
 ```typescript
-// modal-b.ts
+// model-b.ts
 
 class Address {
   street: string;
@@ -114,7 +114,7 @@ The cool thing is that you can use a _Sketch_ as building block for other Sketch
 After creating a _Sketch_ for `Address` it can be used in the _Sketch_ for `Customer`.
 
 ```typescript
-// modal-b.sketch.ts
+// model-b.sketch.ts
 
 class ForAddress extends Sketch<Address> {
   constructor() {
@@ -128,7 +128,7 @@ class ForAddress extends Sketch<Address> {
 To reuse a sketch you simply need to import `Kentan` and the _Sketch_ for `Address`.
 
 ```typescript
-// modal-a.sketch.ts
+// model-a.sketch.ts
 import { Kentan } from 'kentan';
 import { ForAddress } from './for-model-b.sketch';
 
@@ -148,7 +148,7 @@ Now you have the possibility to use the provided test data.
 ```typescript
 // model-a.spec.ts
 describe('using default values', () => {
-  it('should use a sketch for "Address" to create sketch for "ModalA"', () => {
+  it('should use a sketch for "Address" to create sketch for "modelA"', () => {
     const expected = new ForAddress().model().street;
     const sketch = Kentan.sketch(ForCustomer);
 
