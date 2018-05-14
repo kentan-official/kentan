@@ -1,4 +1,5 @@
 import { OverwritableSketch, OverwriteFn } from './overwritable-sketch';
+import { Sketches } from './sketches';
 
 export declare type Constructable<T> = new () => T;
 export declare type ModelFactory<T> = T;
@@ -21,6 +22,14 @@ export class Sketch<T> implements OverwritableSketch<T> {
     } else {
       this._createModel = this._constructInstance(_token, defaults);
     }
+  }
+
+  take(length: number): Sketches<T> {
+    const sketches = Array.from({ length }).map(
+      () => new Sketch(this._token, this._createModel())
+    );
+
+    return new Sketches(sketches);
   }
 
   set(map: OverwriteFn<T>): OverwritableSketch<T> {
