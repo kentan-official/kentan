@@ -48,11 +48,11 @@ export class Sketch<T> implements OverwritableSketch<T> {
   /**
    * Creates a new instance of the model containing test data.
    *
-   * @param {{ [key in keyof T]?: T[key] }} [overrides] contains properties of the model that override the default values of the plan.
+   * @param {Partial<T>} [overrides] contains properties of the model that override the default values of the plan.
    * @returns {T}
    * @memberof Plan
    */
-  model(overrides?: { [key in keyof T]?: T[key] }): T {
+  model(overrides?: Partial<T>): T {
     return Object.assign(this._createModel(), overrides);
   }
 

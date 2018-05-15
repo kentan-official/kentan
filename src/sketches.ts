@@ -1,5 +1,7 @@
 import { OverwritableSketch } from './overwritable-sketch';
 
+export declare type PartialFactory<T> = { [key in keyof T]?: () => T[key] };
+
 export class Sketches<T> {
   constructor(private _sketches: Array<OverwritableSketch<T>>) {}
 
@@ -7,7 +9,7 @@ export class Sketches<T> {
     return this._sketches;
   }
 
-  models(generators?: { [key in keyof T]?: () => T[key] }): T[] {
+  models(generators?: PartialFactory<T>): T[] {
     if (generators) {
       const overrides = this._resolve(generators);
 
@@ -16,9 +18,7 @@ export class Sketches<T> {
     return this._sketches.map(sketch => sketch.model());
   }
 
-  private _resolve(
-    generators: { [key in keyof T]?: () => T[key] }
-  ): { [key in keyof T]?: T[key] } {
+  private _resolve(generators: PartialFactory<T>): Partial<T> {
     return Object.keys(generators)
       .map(key => ({
         [key]: (generators as any)[key]()
