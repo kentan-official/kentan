@@ -1,6 +1,8 @@
 import { OverwritableSketch } from './overwritable-sketch';
 
-export declare type PartialFactory<T> = { [key in keyof T]?: () => T[key] };
+export declare type PartialFactory<T> = {
+  [key in keyof T]?: (index: number) => T[key]
+};
 
 export class Sketches<T> {
   constructor(private _sketches: Array<OverwritableSketch<T>>) {}
@@ -16,8 +18,8 @@ export class Sketches<T> {
 
   private _resolve(generators: PartialFactory<T>): Partial<T> {
     return Object.keys(generators)
-      .map(key => ({
-        [key]: (generators as any)[key]()
+      .map((key, index) => ({
+        [key]: (generators as any)[key](index)
       }))
       .reduce(
         (combinedOverrides, override) => ({
