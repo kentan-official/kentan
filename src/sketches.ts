@@ -9,13 +9,9 @@ export class Sketches<T> {
     return this._sketches;
   }
 
-  models(generators?: PartialFactory<T>): T[] {
-    if (generators) {
-      const overrides = this._resolve(generators);
-
-      return this._sketches.map(sketch => sketch.model(overrides));
-    }
-    return this._sketches.map(sketch => sketch.model());
+  models(generators: PartialFactory<T> = {}): T[] {
+    const overrides = this._resolve(generators);
+    return this._sketches.map(sketch => sketch.model(overrides));
   }
 
   private _resolve(generators: PartialFactory<T>): Partial<T> {
