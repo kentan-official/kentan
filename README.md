@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/logo.png" alt="water lily">
+</p>
+
 # Kentan
 
 [![Build Status](https://travis-ci.org/GregOnNet/kentan.svg?branch=master)](https://travis-ci.org/GregOnNet/kentan)
@@ -16,6 +20,10 @@ $ npm install -D kentan
 # or
 $ yarn add -D kentan
 ```
+
+## How to use
+
+Please refer to the repository's wiki to see how your tests can benefit from _Kentan_.
 
 ## Usage
 
