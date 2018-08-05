@@ -4,9 +4,10 @@
 
 > A modular test data generator.
 
-* Easy and clean test arrangements
-* Reusable test 
-* Multiple themes
+* Clean test arrangements
+* Easy to configure
+* Strongly typed
+* Additional tooling for Angular CLI projects
 
 [GitHub](https://github.com/kentan-official/kentan)
 [Get Started](#Kentan)
