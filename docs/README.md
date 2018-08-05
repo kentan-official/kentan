@@ -2,7 +2,7 @@
   <img src="./assets/logo.png" alt="water lily">
 </p>
 
-# Welcome
+# Kentan
 
 It's a pleasure to see you here. :pray:
 

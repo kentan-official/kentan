@@ -4,9 +4,9 @@
 
 > A modular test data generator.
 
-* Simple and lightweight (~19kB gzipped)
-* No statically built html files
+* Easy and clean test arrangements
+* Reusable test 
 * Multiple themes
 
-[GitHub](https://github.com/GregOnNet/kentan/)
-[Get Started](#kentan)
+[GitHub](https://github.com/kentan-official/kentan)
+[Get Started](#Kentan)
