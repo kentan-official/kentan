@@ -1,2 +1,11 @@
 - Getting Started
   - [Quick Start](./quick-start.md)
+- Fundamentals
+  - [Sketch]
+  - [Factory]
+- Guide
+  - [Partial Overrides]
+  - [Specific Overrides]
+  - [Combine Sketches]
+  - [Use class instance]
+  - [Create Sketch list]
