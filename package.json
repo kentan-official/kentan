@@ -2,10 +2,15 @@
   "name": "kentan",
   "version": "1.1.2",
   "author": "Gregor Woiwode <gregor.woiwode@gmail.com>",
-  "description":
-    "This small framework has the goal to provide a more efficient way to generate test data.",
-  "keywords": ["typescript", "test", "generator"],
-  "devDependencies": {},
+  "description": "This small framework has the goal to provide a more efficient way to generate test data.",
+  "keywords": [
+    "typescript",
+    "test",
+    "generator"
+  ],
+  "devDependencies": {
+    "lerna": "^3.0.0-rc.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
