@@ -9,7 +9,11 @@
     "generator"
   ],
   "scripts": {
-    "lerna:bootstrap": "lerna bootstrap"
+    "bootstrap": "lerna bootstrap",
+    "test": "lerna run test:prod",
+    "build": "lerna run build:prod",
+    "report-coverage": "lerna run report-coverage",
+    "release": "lerna release"
   },
   "devDependencies": {
     "lerna": "^3.0.0-rc.0"
