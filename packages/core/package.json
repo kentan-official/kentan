@@ -1,13 +1,18 @@
 {
   "name": "@kentan-official/core",
-  "version": "1.1.2",
-  "description":
-    "This small framework has the goal to provide a more efficient way to generate test data.",
-  "keywords": ["typescript", "test", "generator"],
+  "version": "1.4.1",
+  "description": "This small framework has the goal to provide a more efficient way to generate test data.",
+  "keywords": [
+    "typescript",
+    "test",
+    "generator"
+  ],
   "main": "dist/kentan.umd.js",
   "module": "dist/kentan.es5.js",
   "typings": "dist/types/kentan.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "author": "Gregor Woiwode <gregor.woiwode@gmail.com>",
   "repository": {
     "type": "git",
@@ -37,7 +42,10 @@
     "travis-deploy-once": "travis-deploy-once"
   },
   "lint-staged": {
-    "{src,test}/**/*.ts": ["prettier --write --single-quote", "git add"]
+    "{src,test}/**/*.ts": [
+      "prettier --write --single-quote",
+      "git add"
+    ]
   },
   "config": {
     "commitizen": {
@@ -45,8 +53,7 @@
     },
     "validate-commit-msg": {
       "types": "conventional-commit-types",
-      "helpMessage":
-        "Use \"npm run commit\" instead, we use conventional-changelog format :) (https://github.com/commitizen/cz-cli)"
+      "helpMessage": "Use \"npm run commit\" instead, we use conventional-changelog format :) (https://github.com/commitizen/cz-cli)"
     }
   },
   "jest": {
@@ -54,8 +61,15 @@
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    "moduleFileExtensions": ["ts", "tsx", "js"],
-    "coveragePathIgnorePatterns": ["/node_modules/", "/test/"],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/"
+    ],
     "coverageThreshold": {
       "global": {
         "branches": 90,
@@ -70,8 +84,15 @@
     "analyzeCommits": {
       "preset": "angular",
       "releaseRules": [
-        { "type": "docs", "scope": "README", "release": "patch" },
-        { "type": "refactor", "release": "patch" }
+        {
+          "type": "docs",
+          "scope": "README",
+          "release": "patch"
+        },
+        {
+          "type": "refactor",
+          "release": "patch"
+        }
       ]
     }
   },
@@ -98,6 +119,7 @@
     "rollup-plugin-sourcemaps": "^0.4.2",
     "rollup-plugin-typescript2": "^0.11.1",
     "semantic-release": "^15.1.7",
+    "travis-deploy-once": "^4.4.1",
     "ts-jest": "^22.0.0",
     "ts-node": "^5.0.1",
     "tslint": "^5.8.0",
@@ -105,7 +127,6 @@
     "tslint-config-standard": "^7.0.0",
     "typedoc": "^0.11.0",
     "typescript": "^2.6.2",
-    "validate-commit-msg": "^2.12.2",
-    "travis-deploy-once": "^4.4.1"
+    "validate-commit-msg": "^2.12.2"
   }
 }
