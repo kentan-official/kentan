@@ -17,5 +17,4 @@ script:
   - yarn test
   - yarn build
 after_success:
-  - yarn report-coverage
   - yarn release
