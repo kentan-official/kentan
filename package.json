@@ -13,7 +13,7 @@
     "test": "lerna run test:prod",
     "build": "lerna run build:prod",
     "report-coverage": "lerna run report-coverage",
-    "release": "lerna release"
+    "release": "lerna publish"
   },
   "devDependencies": {
     "lerna": "^3.0.0-rc.0"
