@@ -13,6 +13,7 @@ notifications:
 node_js:
   - 8
 script:
+  - yarn bootstrap
   - yarn test
   - yarn build
 after_success:
