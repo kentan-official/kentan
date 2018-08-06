@@ -1,5 +1,5 @@
 {
-  "name": "kentan",
+  "name": "@kentan-official/core",
   "version": "1.1.2",
   "description":
     "This small framework has the goal to provide a more efficient way to generate test data.",
