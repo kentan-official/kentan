@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.4.2"></a>
+## [1.4.2](https://github.com/kentan-official/kentan/compare/v1.4.1...v1.4.2) (2018-08-06)
+
+
+### Bug Fixes
+
+* **monorepo:** set remote to mono for the moment ([9c09ee5](https://github.com/kentan-official/kentan/commit/9c09ee5))
+* **monorepo:** skip tagging by lerna due issue: https://github.com/lerna/lerna/issues/839 ([d736776](https://github.com/kentan-official/kentan/commit/d736776))
+
+
+
+
+
 <a name="1.4.1"></a>
 ## [1.4.1](https://github.com/kentan-official/kentan/compare/v1.4.0...v1.4.1) (2018-08-06)
 
