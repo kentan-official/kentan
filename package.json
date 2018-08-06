@@ -1,0 +1,21 @@
+{
+  "name": "kentan",
+  "version": "1.1.2",
+  "author": "Gregor Woiwode <gregor.woiwode@gmail.com>",
+  "description":
+    "This small framework has the goal to provide a more efficient way to generate test data.",
+  "keywords": ["typescript", "test", "generator"],
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kentan-official/kentan.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kentan-official/kentan/issues"
+  },
+  "homepage": "https://github.com/kentan-official/kentan#readme"
+}
