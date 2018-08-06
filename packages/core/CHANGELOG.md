@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.4.3"></a>
+## [1.4.3](https://github.com/kentan-official/kentan/compare/v1.4.2...v1.4.3) (2018-08-06)
+
+**Note:** Version bump only for package @kentan-official/core
+
+
+
+
+
 <a name="1.4.2"></a>
 ## [1.4.2](https://github.com/kentan-official/kentan/compare/v1.4.1...v1.4.2) (2018-08-06)
 
