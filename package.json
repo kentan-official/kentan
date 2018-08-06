@@ -8,11 +8,11 @@
     "test",
     "generator"
   ],
+  "scripts": {
+    "lerna:bootstrap": "lerna bootstrap"
+  },
   "devDependencies": {
     "lerna": "^3.0.0-rc.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
