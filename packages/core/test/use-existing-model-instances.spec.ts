@@ -21,7 +21,7 @@ describe("When a model class has parameters in it's constructor", () => {
     expect(plan.model().paramter).toBe(expected);
   });
 
-  it("should be possible to exectute it's functions", () => {
+  it("should be possible to execute it's functions", () => {
     const expected = "set the constructor's parameter";
     const model = new HasConstructorParameter(expected);
     const plan = new ForHasConstructorParameter(useInstance(model));
