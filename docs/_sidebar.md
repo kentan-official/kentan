@@ -1,12 +1,14 @@
 - Getting Started
   - [Quick Start](./quick-start.md)
 - Fundamentals
-  - [Sketch]
-  - [Factory]
+  - [Sketch]()
+  - [Factory]()
 - Guide
-  - [Partial Overrides]
-  - [Specific Overrides]
-  - [Combine Sketches]
-  - [Use class instance]
-  - [Create Sketch list]
-  - [Use Kentan with Chance]
+  - [Partial Overrides]()
+  - [Specific Overrides]()
+  - [Combine Sketches]()
+  - [Use class instance]()
+  - [Create Sketch list]()
+  - [Use Kentan with Chance]()
+- Angular CLI
+  - [Generate Sketches automatically]()
