@@ -42,8 +42,8 @@
     ]
   },
   "dependencies": {
-    "@angular-devkit/core": "^0.5.10",
-    "@angular-devkit/schematics": "^0.5.10",
+    "@angular-devkit/core": "^0.7.2",
+    "@angular-devkit/schematics": "^0.7.2",
     "find": "^0.2.9",
     "injection-js": "^2.2.1",
     "reflect-metadata": "^0.1.12"
