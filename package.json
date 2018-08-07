@@ -1,8 +1,12 @@
 {
-  "name": "kentan",
+  "name": "kentan-official",
+  "private": true,
   "version": "1.1.2",
   "author": "Gregor Woiwode <gregor.woiwode@gmail.com>",
   "description": "This small framework has the goal to provide a more efficient way to generate test data.",
+  "workspaces": [
+    "packages/*"
+  ],
   "keywords": [
     "typescript",
     "test",
