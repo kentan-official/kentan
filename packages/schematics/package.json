@@ -21,6 +21,9 @@
     "angular",
     "angular-cli"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Gregor Woiwode <gregor.woiwode@gmail.com>",
   "license": "MIT",
   "schematics": "./src/collection.json",
