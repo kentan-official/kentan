@@ -16,6 +16,7 @@
     "bootstrap": "lerna bootstrap",
     "test": "lerna run test:prod",
     "build": "lerna run build:prod",
+    "codecov": "codecov -t 7e71dbda-43ee-4d9a-8468-e483255bc2a0",
     "report-coverage": "lerna run report-coverage",
     "release": "lerna publish"
   },
