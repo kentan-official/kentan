@@ -1,6 +1,6 @@
 {
   "name": "@kentan-official/core",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "This small framework has the goal to provide a more efficient way to generate test data.",
   "keywords": [
     "typescript",
