@@ -36,6 +36,7 @@
       "^.+\\.tsx?$": "ts-jest"
     },
     "testRegex": "((\\.|/)(spec))\\.ts$",
+    "coverageReporters": ["lcov", "text"],
     "moduleFileExtensions": [
       "js",
       "ts"

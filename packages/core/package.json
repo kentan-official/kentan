@@ -71,6 +71,7 @@
       "/node_modules/",
       "/test/"
     ],
+    "coverageReporters": ["lcov", "text"],
     "coverageThreshold": {
       "global": {
         "branches": 90,
