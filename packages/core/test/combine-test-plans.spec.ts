@@ -1,4 +1,4 @@
-import { Sketch, Kentan } from '../src/kentan';
+import { Sketch, Kentan } from '../src/core';
 
 class ModelA {
   modelB: ModelB;

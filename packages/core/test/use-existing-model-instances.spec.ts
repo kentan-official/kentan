@@ -1,4 +1,4 @@
-import { Sketch, useInstance } from '../src/kentan';
+import { Sketch, useInstance } from '../src/core';
 
 export class HasConstructorParameter {
   constructor(public paramter: string) {}
@@ -8,7 +8,9 @@ export class HasConstructorParameter {
   }
 }
 
-export class ForHasConstructorParameter extends Sketch<HasConstructorParameter> {}
+export class ForHasConstructorParameter extends Sketch<
+  HasConstructorParameter
+> {}
 
 describe("When a model class has parameters in it's constructor", () => {
   it('should provide an instance of that class', () => {

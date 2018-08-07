@@ -1,4 +1,4 @@
-import { Kentan, Sketch } from '../src/kentan';
+import { Kentan, Sketch } from '../src/core';
 
 class Empty {}
 
