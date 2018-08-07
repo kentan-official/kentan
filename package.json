@@ -17,7 +17,7 @@
     "test": "lerna run test:prod",
     "build": "lerna run build:prod",
     "report-coverage": "lerna run report-coverage",
-    "prerelease": "lerna publish --git-remote mono --skip-npm",
+    "prerelease": "lerna publish --skip-npm",
     "release": "lerna exec -- npm publish dist/"
   },
   "devDependencies": {
