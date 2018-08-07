@@ -23,5 +23,5 @@
       "default": "test/sketches"
     }
   },
-  "required": ["name"]
+  "required": []
 }
