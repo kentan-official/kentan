@@ -130,5 +130,8 @@
     "typescript": "^2.6.2",
     "validate-commit-msg": "^2.12.2"
   },
-  "gitHead": "d7367769114a0cf8c990d3e1fc7ffdcc6cad12cb"
+  "gitHead": "d7367769114a0cf8c990d3e1fc7ffdcc6cad12cb",
+  "dependencies": {
+    "codecov": "^3.0.4"
+  }
 }
