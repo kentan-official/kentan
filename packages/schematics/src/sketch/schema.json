@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "kentan:Sketch-Schematic",
+  "title": "kentan Sketch for kentan",
+  "type": "object",
+  "properties": {
+    "app": {
+      "type": "number",
+      "description": "The app where the sketch should be created",
+      "default": 0
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the model for which the Sketch should be created",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "dir": {
+      "type": "string",
+      "description": "The location where the Sketch should be created",
+      "default": "test/sketches"
+    }
+  },
+  "required": ["name"]
+}

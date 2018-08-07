@@ -1,0 +1,11 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "sketch": {
+      "aliases": ["ks"],
+      "factory": "./sketch#create",
+      "schema": "./sketch/schema.json",
+      "description": "Creates a Sketch for kentan"
+    }
+  }
+}
