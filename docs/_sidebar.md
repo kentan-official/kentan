@@ -1,5 +1,5 @@
 - Getting Started
-  - [Quick Start](./quick-start.md)
+  - [Quick Start](quick-start.md)
 - Fundamentals
   - [Sketch]()
   - [Factory]()
@@ -11,4 +11,4 @@
   - [Create Sketch list]()
   - [Use Kentan with Chance]()
 - Angular CLI
-  - [Generate Sketches automatically]()
+  - [Generate Sketches automatically](angular-cli/generate-sketches-automatically.md)
