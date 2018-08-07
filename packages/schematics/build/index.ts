@@ -1,7 +1,6 @@
 import { clean, copy, npmRun } from './lib';
 
 clean('./dist/*')
-  .then(() => npmRun('test:prod'))
   .then(() => npmRun('tsc:prod'))
   .then(() =>
     copy([
