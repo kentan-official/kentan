@@ -1,13 +1,12 @@
 ![logo](assets/logo.png)
 
-# Kentan <small>1.1.2</small>
+# Kentan <small>1.6</small>
 
-> A modular test data generator.
+> A modular test data composer.
 
-* Clean test arrangements
-* Easy to configure
+* Easy to maintain
 * Strongly typed
-* Additional tooling for Angular CLI projects
+* Angular CLI support
 
 [GitHub](https://github.com/kentan-official/kentan)
 [Get Started](#Kentan)
