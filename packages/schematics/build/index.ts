@@ -5,7 +5,6 @@ clean('./dist/*')
   .then(() =>
     copy([
       ['./assets/*', './dist'],
-      ['./package.json', './dist'],
       ['./README.md', './dist'],
       ['./src/collection.json', './dist'],
       ['./src/**/schema.json', './dist'],

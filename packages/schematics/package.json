@@ -29,7 +29,7 @@
   },
   "author": "Gregor Woiwode <gregor.woiwode@gmail.com>",
   "license": "MIT",
-  "schematics": "./src/collection.json",
+  "schematics": "./dist/src/collection.json",
   "jest": {
     "testURL": "http://localhost",
     "transform": {
