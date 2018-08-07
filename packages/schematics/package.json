@@ -1,6 +1,6 @@
 {
   "name": "@kentan-official/schematics",
-  "version": "1.4.3",
+  "version": "1.5.1",
   "description": "Schematics for @kentan-official/core automating creation of sketches",
   "repository": {
     "type": "git",
