@@ -11,10 +11,8 @@ export interface ModelSearchResult {
 }
 
 export class ModelFinder {
-  private readonly _testFile = new RegExp(`${name}.ts$`);
-
   find(root: string, name: string): OptionType<ModelSearchResult> {
-    const searchResult = fileSync(this._testFile, root)
+    const searchResult = fileSync(this._fileQuery(name), root)
       .map(path => ({
         path,
         content: readFileSync(path).toString(),
@@ -25,6 +23,10 @@ export class ModelFinder {
     return !!searchResult
       ? new Some(searchResult)
       : new None({ explanation: `Could not find "${name}" in "${root}"` });
+  }
+
+  private _fileQuery(name: string): RegExp {
+    return new RegExp(`${name}.ts$`)
   }
 }
 
