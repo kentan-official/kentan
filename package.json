@@ -17,7 +17,8 @@
     "test": "lerna run test:prod",
     "build": "lerna run build:prod",
     "report-coverage": "lerna run report-coverage",
-    "release": "lerna publish --git-remote mono"
+    "prerelease": "lerna publish --git-remote mono --skip-npm",
+    "release": "lerna exec -- npm publish packages/\\$LERNA_PACKAGE_NAME/dist"
   },
   "devDependencies": {
     "lerna": "^3.0.0-rc.0"
