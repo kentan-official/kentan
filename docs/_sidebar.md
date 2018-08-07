@@ -9,3 +9,4 @@
   - [Combine Sketches]
   - [Use class instance]
   - [Create Sketch list]
+  - [Use Kentan with Chance]
