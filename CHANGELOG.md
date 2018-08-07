@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.7.0"></a>
+# [1.7.0](https://github.com/kentan-official/kentan/compare/v1.6.2...v1.7.0) (2018-08-07)
+
+
+### Bug Fixes
+
+* **core:build:** remove dist before starting production build ([d270cfb](https://github.com/kentan-official/kentan/commit/d270cfb))
+* **npm-publish:** correct path to dist ([5a9afd1](https://github.com/kentan-official/kentan/commit/5a9afd1))
+
+
+### Features
+
+* **core:build:** copy package.json & LICENSE to dist ([81c9423](https://github.com/kentan-official/kentan/commit/81c9423))
+
+
+
+
+
 <a name="1.6.2"></a>
 ## [1.6.2](https://github.com/kentan-official/kentan/compare/v1.6.0...v1.6.2) (2018-08-07)
 
