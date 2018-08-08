@@ -2,19 +2,21 @@
   <img src="./assets/logo.png" alt="water lily">
 </p>
 
-# Kentan
+# What is Kentan?
 
-It's a pleasure to see you here. :pray:
+?> This is a kind hint
 
-If you need a really quick intro into _Kentan_ we recommend to go through the [Quick Start](quick-start.md).
+!> This is an important hint
 
-To learn about all the powerful features _Kentan_ provides please checkout the following articles that speed you up arranging you tests.
+# Features
 
-- Architecture
-- Use a Sketch inside a Unit Test
-- Customize Sketch data
-- Get certain data from a Sketch
-- Combine multiple Sketches
-- Create a List of Sketches
-  - Ensure uniqueness of each created Sketch
-- Build a Sketch based on an existing instance of a class
+- Organizes your test data
+- Makes your test data reusable
+- Configures test data with ease
+- Works with every testing framework ([Jest](https://jestjs.io/), [Mocha](https://mochajs.org/), [Jasmine](https://jasmine.github.io/), etc).
+
+# Feedback
+
+Your feedback is always welcome!
+
+You can file [issues](https://github.com/kentan-official/kentan/issues) and create [pull requests](https://github.com/kentan-official/kentan/pulls) on the Kentan Github repository. The [contributing guide](https://github.com/kentan-official/kentan/blob/master/CONTRIBUTING.md) will help you contribute to this project.

@@ -1,6 +1,6 @@
 ![logo](assets/logo.png)
 
-# Kentan
+# Kentan <small>1.7</small>
 
 > A modular test data composer.
 
@@ -9,4 +9,4 @@
 * Angular CLI support
 
 [GitHub](https://github.com/kentan-official/kentan)
-[Get Started](#Kentan)
+[Get Started](#main)
