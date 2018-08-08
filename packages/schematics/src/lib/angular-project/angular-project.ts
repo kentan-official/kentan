@@ -2,7 +2,7 @@ import { Tree } from '@angular-devkit/schematics';
 import { CliFactory, ProjectType } from '../contracts';
 import { KentanError } from '../errors/kentan.error';
 import { AngularCliOneMinor } from './angular-cli-one-minor';
-import { AngularCliProject } from './angular-cli-project';
+import { AngularCliProject } from '../contracts/angular-cli-project';
 import { AngularCliSix } from './angular-cli-six';
 import { CliCreator, jsonOf } from './helpers';
 

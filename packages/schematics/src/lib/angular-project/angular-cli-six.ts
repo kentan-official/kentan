@@ -1,4 +1,4 @@
-import { AngularCliProject } from './angular-cli-project';
+import { AngularCliProject } from '../contracts/angular-cli-project';
 
 export interface AngularCliSixConfiguration {
   cli?: { packageManager?: string };
