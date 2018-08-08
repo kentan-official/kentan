@@ -1,12 +1,12 @@
 - **Get Started**
-  - [Home](README.md)
-  - [Quick Start](quick-start.md)
+  - [Home](getting-started/home.md)
+  - [Quick Start](getting-started/quick-start.md)
 - **Fundamentals**
   - [Sketch](fundamentals/sketch.md)
   - [Factory](fundamentals/factory.md)
 - **Guide**
   - [Compose Sketches](guide/compose-sketches.md)
   - [Create Sketch list](guide/create-sketch-list.md)
-  - [Use Chance](guide/use-chance.md)
+  - [Generate Random Values](guide/generate-random-values.md)
 - **Angular CLI**
   - [Generate Sketches automatically](angular-cli/generate-sketches-automatically.md)

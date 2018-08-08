@@ -1,0 +1,24 @@
+# What is Kentan?
+
+Kentan allows you to create, organize and compose test data.
+Once this is done it simplifies your test arrangements.
+Kentan is written in [TypeScript](https://www.typescriptlang.org/) and provides typed `Factories` and `Builders` to create reusable test data.
+
+The Kentan library can be used with any test framework you know ([Jest](https://jestjs.io/), [Mocha](https://mochajs.org/), [Jasmine](https://jasmine.github.io/), etc).
+
+?> The goal of Kentan is to support you writing readable and maintainable tests.
+
+To get started please refer to the [Quick Start](quick-start.md).
+
+## Features
+
+- Organizes your test data
+- Makes your test data reusable
+- Configures test data with ease
+- Provides tooling for [Angular CLI](https://cli.angular.io) projects
+
+## Feedback
+
+Your feedback is always welcome!
+
+You can file [issues](https://github.com/kentan-official/kentan/issues) and create [pull requests](https://github.com/kentan-official/kentan/pulls) on the Kentan Github repository. The [contributing guide](https://github.com/kentan-official/kentan/blob/master/CONTRIBUTING.md) will help you contribute to this project.
