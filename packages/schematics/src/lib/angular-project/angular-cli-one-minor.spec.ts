@@ -72,4 +72,23 @@ describe('Angular CLI Version 1.x', () => {
       });
     });
   });
+
+  describe('When a packageManager is configured', () => {
+    it('should yield the present packageManager', () => {
+      const packageManager = 'yarn';
+      const config = { packageManager, apps: [] };
+      const project = new AngularCliOneMinor(config);
+
+      expect(project.getPackageManager()).toBe(packageManager);
+    });
+  });
+
+  describe('When a packageManager is not configured', () => {
+    it('should yield the present packageManager', () => {
+      const config = { apps: [] };
+      const project = new AngularCliOneMinor(config);
+
+      expect(project.getPackageManager()).toBeUndefined();
+    });
+  });
 });

@@ -32,7 +32,27 @@ describe('Angular Project', () => {
 
         const project = new AngularProject(tree);
         expect(project.getAppDirectoryPath()).toBe('src/app');
-      })
+      });
+
+      describe('When a packageManager is configured', () => {
+        it.only('should yield the present packageManager', () => {
+          const config = { packageManager: 'yarn', apps: [] };
+          tree.create('.angular-cli.json', JSON.stringify(config));
+  
+          const project = new AngularProject(tree);
+          expect(project.getPackageManager()).toBe('yarn');
+        });
+      });
+    
+      describe('When a packageManager is not configured', () => {
+        it('should yield the present packageManager', () => {
+          const config = { apps: [] };
+          tree.create('.angular-cli.json', JSON.stringify(config));
+  
+          const project = new AngularProject(tree);
+          expect(project.getPackageManager()).toBeUndefined();
+        });
+      });
     });
 
     describe('When angular.json is found', () => {
@@ -64,6 +84,26 @@ describe('Angular Project', () => {
         expect(() => new AngularProject(tree)).toThrowError(
           'kentan-schematics: Could not find project configuration. Looked for: .angular-cli.json, /angular-cli.json, /.angular.json, /angular.json'
         );
+      });
+    });
+
+    describe('When a packageManager is configured', () => {
+      it.only('should yield the present packageManager', () => {
+        const config = { cli: { packageManager: 'yarn' }, projects: {} };
+        tree.create('angular.json', JSON.stringify(config));
+
+        const project = new AngularProject(tree);
+        expect(project.getPackageManager()).toBe('yarn');
+      });
+    });
+  
+    describe('When a packageManager is not configured', () => {
+      it('should yield the present packageManager', () => {
+        const config = { projects: {} };
+        tree.create('angular.json', JSON.stringify(config));
+
+        const project = new AngularProject(tree);
+        expect(project.getPackageManager()).toBeUndefined();
       });
     });
   });

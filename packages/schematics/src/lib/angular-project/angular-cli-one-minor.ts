@@ -3,6 +3,7 @@ import { KentanError } from '../errors/kentan.error';
 
 export interface AngularCliMinorOneConfiguration {
   apps: { root: string }[];
+  packageManager?: string;
 }
 
 export class AngularCliOneMinor implements AngularCliProject {
@@ -10,6 +11,10 @@ export class AngularCliOneMinor implements AngularCliProject {
 
   constructor(private readonly _config: AngularCliMinorOneConfiguration) {
     this._throwIfNoAppsDefined(this._config);
+  }
+
+  getPackageManager() {
+    return this._config.packageManager;
   }
 
   getAppDirectoryPath(index = 0): string {

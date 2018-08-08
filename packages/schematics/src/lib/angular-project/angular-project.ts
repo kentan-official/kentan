@@ -30,6 +30,10 @@ export class AngularProject implements AngularCliProject {
     return this._cli.version;
   }
 
+  getPackageManager() {
+    return this._cli.getPackageManager();
+  }
+
   getAppDirectoryPath(index?: string | number): string {
     return this._cli.getAppDirectoryPath(index);
   }
@@ -39,7 +43,7 @@ export class AngularProject implements AngularCliProject {
       .reduce(this._flattenAvailableProjectTypes, [])
       .filter(factory => tree.exists(factory.projectFilePath))
       .map(_ => new _.cli(jsonOf(tree.read(_.projectFilePath))))
-      .find(cliProject => !!cliProject);
+      .find(cliProject => cliProject);
   }
 
   private _flattenAvailableProjectTypes(

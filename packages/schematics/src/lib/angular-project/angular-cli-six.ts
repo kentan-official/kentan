@@ -1,11 +1,17 @@
 import { AngularCliProject } from './angular-cli-project';
 
 export interface AngularCliSixConfiguration {
+  cli?: { packageManager?: string };
   projects: { [key: string]: { root: string } };
 }
 
 export class AngularCliSix implements AngularCliProject {
   readonly version = '^6.x';
+
+  getPackageManager() {
+    const cli = this._config.cli || {};
+    return cli.packageManager;
+  }
 
   constructor(private readonly _config: AngularCliSixConfiguration) {
     this._throwIfNoProjectsDefined(this._config);

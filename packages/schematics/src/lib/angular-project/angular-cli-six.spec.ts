@@ -98,4 +98,23 @@ describe('Angular CLI Version 6.x', () => {
       });
     });
   });
+
+  describe('When a packageManager is configured', () => {
+    it('should yield the present packageManager', () => {
+      const packageManager = 'yarn';
+      const config = { cli: { packageManager }, projects: {} };
+      const project = new AngularCliSix(config);
+
+      expect(project.getPackageManager()).toBe(packageManager);
+    });
+  });
+
+  describe('When a packageManager is not configured', () => {
+    it('should yield the present packageManager', () => {
+      const config = { projects: {} };
+      const project = new AngularCliSix(config);
+
+      expect(project.getPackageManager()).toBeUndefined();
+    });
+  });
 });
