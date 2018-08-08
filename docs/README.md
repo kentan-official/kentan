@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="./assets/logo.png" alt="water lily">
-</p>
-
 # What is Kentan?
 
 # Features

@@ -1,4 +1,5 @@
-- **Getting Started**
+- **Get Started**
+  - [Home](README.md)
   - [Quick Start](quick-start.md)
 - **Fundamentals**
   - [Sketch](fundamentals/sketch.md)
