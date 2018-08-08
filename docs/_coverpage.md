@@ -1,6 +1,6 @@
 ![logo](assets/logo.png)
 
-# Kentan <small>1.6</small>
+# Kentan
 
 > A modular test data composer.
 
