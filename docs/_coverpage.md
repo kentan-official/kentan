@@ -4,7 +4,7 @@
 
 > A modular test data composer.
 
-* Easy to maintain
+* Easy to use
 * Strongly typed
 * Angular CLI support
 
