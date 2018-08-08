@@ -1,14 +1,11 @@
-- Getting Started
+- **Getting Started**
   - [Quick Start](quick-start.md)
-- Fundamentals
-  - [Sketch]()
-  - [Factory]()
-- Guide
-  - [Partial Overrides]()
-  - [Specific Overrides]()
-  - [Combine Sketches]()
-  - [Use class instance]()
-  - [Create Sketch list]()
-  - [Use Kentan with Chance]()
-- Angular CLI
+- **Fundamentals**
+  - [Sketch](fundamentals/sketch.md)
+  - [Factory](fundamentals/factory.md)
+- **Guide**
+  - [Compose Sketches](guide/compose-sketches.md)
+  - [Create Sketch list](guide/create-sketch-list.md)
+  - [Use Chance](guide/use-chance.md)
+- **Angular CLI**
   - [Generate Sketches automatically](angular-cli/generate-sketches-automatically.md)

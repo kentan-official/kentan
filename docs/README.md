@@ -4,10 +4,6 @@
 
 # What is Kentan?
 
-?> This is a kind hint
-
-!> This is an important hint
-
 # Features
 
 - Organizes your test data
