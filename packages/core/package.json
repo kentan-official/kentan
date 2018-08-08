@@ -103,7 +103,7 @@
     "@types/node": "^9.3.0",
     "colors": "^1.1.2",
     "commitizen": "^2.9.6",
-    "coveralls": "^3.0.0",
+    "codecov": "^3.0.4",
     "cross-env": "^5.0.1",
     "cz-conventional-changelog": "^2.0.0",
     "husky": "^0.14.0",
@@ -132,7 +132,4 @@
     "validate-commit-msg": "^2.12.2"
   },
   "gitHead": "d7367769114a0cf8c990d3e1fc7ffdcc6cad12cb",
-  "dependencies": {
-    "codecov": "^3.0.4"
-  }
 }

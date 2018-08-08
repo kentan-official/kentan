@@ -45,7 +45,6 @@
   "dependencies": {
     "@angular-devkit/core": "^0.7.2",
     "@angular-devkit/schematics": "^0.7.2",
-    "codecov": "^3.0.4",
     "find": "^0.2.9",
     "injection-js": "^2.2.1",
     "reflect-metadata": "^0.1.12"
@@ -56,7 +55,7 @@
     "@types/globby": "^6.1.0",
     "@types/jest": "^22.2.3",
     "@types/node": "^10.0.0",
-    "coveralls": "^3.0.1",
+    "codecov": "^3.0.4",
     "fs-extra": "^5.0.0",
     "globby": "^8.0.1",
     "jest": "^22.4.3",
