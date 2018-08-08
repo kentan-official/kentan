@@ -38,17 +38,17 @@ describe('Angular Project', () => {
         it.only('should yield the present packageManager', () => {
           const config = { packageManager: 'yarn', apps: [] };
           tree.create('.angular-cli.json', JSON.stringify(config));
-  
+
           const project = new AngularProject(tree);
           expect(project.packageManager).toBe('yarn');
         });
       });
-    
+
       describe('When a packageManager is not configured', () => {
         it('should yield the present packageManager', () => {
           const config = { apps: [] };
           tree.create('.angular-cli.json', JSON.stringify(config));
-  
+
           const project = new AngularProject(tree);
           expect(project.packageManager).toBeUndefined();
         });
@@ -96,7 +96,7 @@ describe('Angular Project', () => {
         expect(project.packageManager).toBe('yarn');
       });
     });
-  
+
     describe('When a packageManager is not configured', () => {
       it('should yield the present packageManager', () => {
         const config = { projects: {} };

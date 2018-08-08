@@ -20,18 +20,18 @@ export class AngularProject implements AngularCliProject {
     }
   ];
 
-  constructor(tree: Tree) {
-    this._throwIfNoTreeGiven(tree);
-    this._cli = this._chooseCli(tree);
-    this._throwIfNoCliFound();
-  }
-
   get version() {
     return this._cli.version;
   }
 
   get packageManager() {
     return this._cli.packageManager;
+  }
+  
+  constructor(tree: Tree) {
+    this._throwIfNoTreeGiven(tree);
+    this._cli = this._chooseCli(tree);
+    this._throwIfNoCliFound();
   }
 
   getAppDirectoryPath(index?: string | number): string {
