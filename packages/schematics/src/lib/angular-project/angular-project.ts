@@ -30,8 +30,8 @@ export class AngularProject implements AngularCliProject {
     return this._cli.version;
   }
 
-  getPackageManager() {
-    return this._cli.getPackageManager();
+  get packageManager() {
+    return this._cli.packageManager;
   }
 
   getAppDirectoryPath(index?: string | number): string {

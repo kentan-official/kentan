@@ -8,7 +8,7 @@ export interface AngularCliSixConfiguration {
 export class AngularCliSix implements AngularCliProject {
   readonly version = '^6.x';
 
-  getPackageManager() {
+  get packageManager() {
     const cli = this._config.cli || {};
     return cli.packageManager;
   }

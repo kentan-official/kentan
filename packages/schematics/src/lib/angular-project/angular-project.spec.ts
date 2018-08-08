@@ -40,7 +40,7 @@ describe('Angular Project', () => {
           tree.create('.angular-cli.json', JSON.stringify(config));
   
           const project = new AngularProject(tree);
-          expect(project.getPackageManager()).toBe('yarn');
+          expect(project.packageManager).toBe('yarn');
         });
       });
     
@@ -50,7 +50,7 @@ describe('Angular Project', () => {
           tree.create('.angular-cli.json', JSON.stringify(config));
   
           const project = new AngularProject(tree);
-          expect(project.getPackageManager()).toBeUndefined();
+          expect(project.packageManager).toBeUndefined();
         });
       });
     });
@@ -93,7 +93,7 @@ describe('Angular Project', () => {
         tree.create('angular.json', JSON.stringify(config));
 
         const project = new AngularProject(tree);
-        expect(project.getPackageManager()).toBe('yarn');
+        expect(project.packageManager).toBe('yarn');
       });
     });
   
@@ -103,7 +103,7 @@ describe('Angular Project', () => {
         tree.create('angular.json', JSON.stringify(config));
 
         const project = new AngularProject(tree);
-        expect(project.getPackageManager()).toBeUndefined();
+        expect(project.packageManager).toBeUndefined();
       });
     });
   });

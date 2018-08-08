@@ -79,7 +79,7 @@ describe('Angular CLI Version 1.x', () => {
       const config = { packageManager, apps: [] };
       const project = new AngularCliOneMinor(config);
 
-      expect(project.getPackageManager()).toBe(packageManager);
+      expect(project.packageManager).toBe(packageManager);
     });
   });
 
@@ -88,7 +88,7 @@ describe('Angular CLI Version 1.x', () => {
       const config = { apps: [] };
       const project = new AngularCliOneMinor(config);
 
-      expect(project.getPackageManager()).toBeUndefined();
+      expect(project.packageManager).toBeUndefined();
     });
   });
 });

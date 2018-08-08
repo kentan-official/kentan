@@ -1,5 +1,5 @@
 export interface AngularCliProject {
   version: string;
-  getPackageManager(): string|undefined;
+  packageManager: string|undefined;
   getAppDirectoryPath(index?: number | string): string;
 }

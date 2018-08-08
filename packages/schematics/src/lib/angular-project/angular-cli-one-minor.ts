@@ -13,7 +13,7 @@ export class AngularCliOneMinor implements AngularCliProject {
     this._throwIfNoAppsDefined(this._config);
   }
 
-  getPackageManager() {
+  get packageManager() {
     return this._config.packageManager;
   }
 

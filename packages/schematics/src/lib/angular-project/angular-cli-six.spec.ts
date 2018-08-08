@@ -105,7 +105,7 @@ describe('Angular CLI Version 6.x', () => {
       const config = { cli: { packageManager }, projects: {} };
       const project = new AngularCliSix(config);
 
-      expect(project.getPackageManager()).toBe(packageManager);
+      expect(project.packageManager).toBe(packageManager);
     });
   });
 
@@ -114,7 +114,7 @@ describe('Angular CLI Version 6.x', () => {
       const config = { projects: {} };
       const project = new AngularCliSix(config);
 
-      expect(project.getPackageManager()).toBeUndefined();
+      expect(project.packageManager).toBeUndefined();
     });
   });
 });
