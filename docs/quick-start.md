@@ -7,10 +7,10 @@ Kentan comes in to play if you have complex nested data structures in your TypeS
 For starting quickly please clone the quick-start repository, install the dependencies, and run the unit tests.
 
 ```bash
-$ git clone https://github.com/kentan/quick-start.git
-$ cd quick-start
-$ npm install
-$ npm test
+git clone https://github.com/kentan/quick-start.git
+cd quick-start
+npm install
+npm test
 ```
 
 You will find two directories named :file_folder: `models` and :file_folder: `test`.
@@ -34,7 +34,7 @@ To provide reusable test data builder for all future tests we now introduce _Ken
 Please install the library via `npm`.
 
 ```bash
-$ npm install --save-dev kentan
+npm install --save-dev kentan
 ```
 
 After the installation has finished we create a folder named :file_folder: `sketches`. In there we will create a [Sketch]() for each model that we nee to test.
@@ -48,7 +48,7 @@ We start to refactor the already existing tests by creating a `Sketch` for the c
 ```ts
 // sketches/product.sketch.ts
 
-import { Sketch } from '@kentan/core';
+import { Sketch } from '@kentan-official/core';
 import { Product } from '../models';
 
 export class ForProduct extends Sketch<Product> {
@@ -64,7 +64,7 @@ Congratulations :clap::clap:, now you can use the `Sketch` to tidy up the test i
 ```diff
 // test/product.spec.ts
 
-+ import { Kentan } from '@kentan/core';
++ import { Kentan } from '@kentan-official/core';
 
 /* ... */
 
