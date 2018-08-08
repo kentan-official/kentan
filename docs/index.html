@@ -7,6 +7,16 @@
   <meta name="description" content="This small framework has the goal to provide a more efficient way to setup and manage your test data.">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <style>
+    .lang-diff .token.inserted {
+      border-bottom: 0;
+      color: #19c075;
+    }
+    .lang-diff .token.deleted {
+      text-decoration: none;
+      color: #e2777a;
+    }
+  </style>
 </head>
 <body>
   <div id="app"></div>
@@ -24,5 +34,8 @@
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
   <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
   <script src="//unpkg.com/docsify-copy-code"></script>
+  <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-typescript.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-diff.min.js"></script>
 </body>
 </html>
