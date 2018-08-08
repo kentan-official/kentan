@@ -8,7 +8,7 @@ The Kentan library can be used with any test framework you know ([Jest](https://
 
 ?> The goal of Kentan is to support you writing readable and maintainable tests.
 
-To get started please refer to the [Quick Start](quick-start.md).
+See the [Quick Start](quick-start.md) for more details.
 
 ## Features
 
