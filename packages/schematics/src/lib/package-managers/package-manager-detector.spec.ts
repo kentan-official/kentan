@@ -1,3 +1,5 @@
+import { CliPackageManagerDetector } from './cli-package-manager-detector';
+
 import { VirtualTree } from '@angular-devkit/schematics';
 import { UnitTestTree } from '@angular-devkit/schematics/testing';
 
@@ -30,8 +32,28 @@ describe('Angular Project does not configure a package manager', () => {
     });
   });
 
-  describe('When no package manager is configured globally', () => {
-    // it('should default to npm');
+  function fsCliConfigurationMock(content?: {}) {
+    return {
+      readFileSync: () => JSON.stringify(content)
+    };
+  }
+
+  describe('When no package manager is configured neither globally nor locally', () => {
+    it('should default to npm', () => {
+      const configuration = {
+        projects: { app: { root: ' ' } }
+      };
+      const tree = new UnitTestTree(new VirtualTree());
+      tree.create('angular.json', JSON.stringify(configuration));
+
+      const app = new AngularProject(tree);
+      const globalConfig = new GlobalCliConfiguration(fsCliConfigurationMock() as any);
+
+      const detector = new CliPackageManagerDetector();
+      const command = detector.detect(app, globalConfig);
+
+      expect(command).toBe('npm');
+    });
   });
 });
 
@@ -51,16 +73,3 @@ describe('When an Angular Project has a package manager configured', () => {
     expect(command).toBe('pnpm');
   });
 });
-
-export class CliPackageManagerDetector {
-  constructor(private _packageManagers = ['npm', 'pnpm', 'yarn']) {}
-
-  detect(
-    app: AngularCliProject,
-    globalConfiguration: GlobalCliConfiguration
-  ): string {
-    const found = this._packageManagers.find(m => m === app.packageManager);
-
-    return !!found ? found : globalConfiguration.readPackageManager();
-  }
-}
