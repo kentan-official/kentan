@@ -1,6 +1,14 @@
 {
-  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "$schema":
+    "../node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
+    "ng-add": {
+      "aliases": ["install-kentan"],
+      "factory": "./install#ngAdd",
+      "schema": "./install/schema.json",
+      "description":
+        "Installs @kentan-official/core & @kentan-official/schematics"
+    },
     "sketch": {
       "aliases": ["ks"],
       "factory": "./sketch#create",

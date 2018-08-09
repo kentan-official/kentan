@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "kentan:Install-Kentan",
+  "title": "Install @kentan-official",
+  "type": "object",
+  "properties": {},
+  "required": []
+}
