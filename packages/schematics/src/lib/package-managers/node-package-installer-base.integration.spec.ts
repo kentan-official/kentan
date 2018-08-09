@@ -22,27 +22,32 @@ import { NodePackageInstallerBase } from './node-package-installer-base';
  * An invalid package name is passed to check the error case.
  */
 
-describe('When installation was successful', () => {
-  it('should yield a success message', done => {
-    const npm = new NodePackageInstallerBase('npm', 'install');
-    npm
-      .installDev(['--quiet', '--dry-run', 'is-positive'])
-      .subscribe(message => {
-        expect(message).toBe('Installation completed!');
-        done();
-      });
-  });
-});
+describe('[Integration Test] Handle package install result', () => {
+  beforeAll(() => jest.setTimeout(20000));
+  afterAll(() => jest.setTimeout(5000));
 
-describe('When an error occurs due installation', () => {
-  it('should yield an error message', done => {
-    const npm = new NodePackageInstallerBase('npm', 'install');
-    npm.installDev(['--quiet', '--dry-run', '!mlsdkf3sfjosd']).subscribe(
-      _ => {},
-      message => {
-        expect(message).toBe('Error installing @kentan-official. See above.');
-        done();
-      }
-    );
+  describe('When installation was successful', () => {
+    it('should yield a success message', done => {
+      const npm = new NodePackageInstallerBase('npm', 'install');
+      npm
+        .installDev(['--quiet', '--dry-run', 'is-positive'])
+        .subscribe(message => {
+          expect(message).toBe('Installation completed!');
+          done();
+        });
+    });
+  });
+
+  describe('When an error occurs due installation', () => {
+    it('should yield an error message', done => {
+      const npm = new NodePackageInstallerBase('npm', 'install');
+      npm.installDev(['--quiet', '--dry-run', '!mlsdkf3sfjosd']).subscribe(
+        _ => {},
+        message => {
+          expect(message).toBe('Error installing @kentan-official. See above.');
+          done();
+        }
+      );
+    });
   });
 });
