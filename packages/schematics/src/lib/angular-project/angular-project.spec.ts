@@ -35,7 +35,7 @@ describe('Angular Project', () => {
       });
 
       describe('When a packageM manager is configured', () => {
-        it.only('should yield the present package manager', () => {
+        it('should yield the present package manager', () => {
           const config = { packageManager: 'yarn', apps: [{}] };
           tree.create('.angular-cli.json', JSON.stringify(config));
 
@@ -88,7 +88,7 @@ describe('Angular Project', () => {
     });
 
     describe('When a package manager is configured', () => {
-      it.only('should yield the present package manager', () => {
+      it('should yield the present package manager', () => {
         const config = {
           cli: { packageManager: 'yarn' },
           projects: { app: { root: '' } }
@@ -100,9 +100,9 @@ describe('Angular Project', () => {
       });
     });
 
-    describe('When a packageManager is not configured', () => {
-      it('should yield the present packageManager', () => {
-        const config = { projects: {} };
+    describe('When a package manager is not configured', () => {
+      it('should yield the present package manager', () => {
+        const config = { projects: { app: { root: '' }} };
         tree.create('angular.json', JSON.stringify(config));
 
         const project = new AngularProject(tree);
@@ -110,7 +110,7 @@ describe('Angular Project', () => {
       });
     });
   });
-
+  
   describe('When no Tree is given', () => {
     it('should raise an error', () => {
       expect(() => new AngularProject(undefined as any)).toThrowError(
