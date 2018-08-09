@@ -33,3 +33,5 @@ export class NodePackageInstallerBase implements ILoadNodePackages {
     });
   }
 }
+
+export default NodePackageInstallerBase;

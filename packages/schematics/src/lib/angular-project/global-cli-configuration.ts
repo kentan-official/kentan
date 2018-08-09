@@ -26,3 +26,5 @@ export class GlobalCliConfiguration {
     return JSON.parse(configuration || '{}');
   }
 }
+
+export default GlobalCliConfiguration;
