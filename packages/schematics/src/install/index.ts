@@ -1,6 +1,6 @@
 import { SchematicContext, Tree } from '@angular-devkit/schematics';
 import { of } from 'rxjs';
-import { catchError, tap, mapTo } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 
 import { AngularProject } from '../lib';
 import { GlobalCliConfiguration } from '../lib/angular-project/global-cli-configuration';
@@ -22,7 +22,6 @@ export function ngAdd() {
       .installDev(['@kentan-official/core', '@kentan-official/schematics'])
       .pipe(
         tap(message => context.logger.info(message)),
-        mapTo(tree),
         catchError(message => {
           context.logger.fatal(message);
           return of(tree);
