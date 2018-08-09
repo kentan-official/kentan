@@ -1,27 +1,10 @@
-import { Observable, of, throwError } from 'rxjs';
+import { VirtualTree } from '@angular-devkit/schematics';
 import {
   SchematicTestRunner,
   UnitTestTree
-} from '../../../../node_modules/@angular-devkit/schematics/testing';
+} from '@angular-devkit/schematics/testing';
 import { join } from 'path';
-import { VirtualTree } from '../../../../node_modules/@angular-devkit/schematics';
-
-// describe("When a sketch is created and the specified model doesn't exist", () => {
-//   beforeEach(() => {
-//     const config = { apps: [{ root: 'src' }] };
-//     collectionPath = join(__dirname, '../collection.json');
-//     runner = new SchematicTestRunner('kentan', collectionPath);
-//     actualTree = new UnitTestTree(new VirtualTree());
-//     actualTree.create('.angular-cli.json', JSON.stringify(config));
-//     useModelFinderMock();
-//   });
-
-//   it("should create the sketch in '/test/sketches/<model>.sketch.ts'", () => {
-//     const tree = runner.runSchematic(
-//       'sketch',
-//       { name: 'customer' },
-//       actualTree
-//     );
+import { Observable, of, throwError } from 'rxjs';
 
 describe('ng add @kentan-official/schematics', () => {
   let collectionPath: string;
@@ -49,7 +32,7 @@ describe('ng add @kentan-official/schematics', () => {
 
     UseMock.globalCliConfiguration();
   });
-  
+
   describe('When Kentan is installed successfully', () => {
     it('should log an info message', () => {
       UseMock.packageInstaller(of(tree));
@@ -66,6 +49,8 @@ describe('ng add @kentan-official/schematics', () => {
       expect(childLogger.fatal).toHaveBeenCalled();
     });
   });
+
+  afterEach(() => jest.resetAllMocks());
 });
 
 class UseMock {

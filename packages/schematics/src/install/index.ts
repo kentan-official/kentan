@@ -19,13 +19,9 @@ export function ngAdd() {
     );
 
     return packageManager
-    .installDev(['@kentan-official/core', '@kentan-official/schematics'])
-    .pipe(
-      tap(message => {
-        
-        console.log('shdakjdhadhasldaslkdhaklsdhahasld', packageManager);
-          context.logger.info(message)
-        }),
+      .installDev(['@kentan-official/core', '@kentan-official/schematics'])
+      .pipe(
+        tap(message => context.logger.info(message)),
         mapTo(tree),
         catchError(message => {
           context.logger.fatal(message);
