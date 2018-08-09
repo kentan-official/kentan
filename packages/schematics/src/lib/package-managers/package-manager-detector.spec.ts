@@ -1,11 +1,11 @@
-import { CliPackageManagerDetector } from './cli-package-manager-detector';
-
 import { VirtualTree } from '@angular-devkit/schematics';
 import { UnitTestTree } from '@angular-devkit/schematics/testing';
 
+import { fsCliConfigurationMock } from '../../test';
 import { AngularProject } from '../angular-project/angular-project';
+import { GlobalCliConfiguration } from '../angular-project/global-cli-configuration';
 import { AngularCliProject } from '../contracts/angular-cli-project';
-import { GlobalCliConfiguration } from '../angular-project/global-cli-configuration.spec';
+import { CliPackageManagerDetector } from './cli-package-manager-detector';
 
 describe('Angular Project does not configure a package manager', () => {
   describe('When no package manager is configured', () => {
@@ -32,12 +32,6 @@ describe('Angular Project does not configure a package manager', () => {
     });
   });
 
-  function fsCliConfigurationMock(content?: {}) {
-    return {
-      readFileSync: () => JSON.stringify(content)
-    };
-  }
-
   describe('When no package manager is configured neither globally nor locally', () => {
     it('should default to npm', () => {
       const configuration = {
@@ -47,7 +41,9 @@ describe('Angular Project does not configure a package manager', () => {
       tree.create('angular.json', JSON.stringify(configuration));
 
       const app = new AngularProject(tree);
-      const globalConfig = new GlobalCliConfiguration(fsCliConfigurationMock() as any);
+      const globalConfig = new GlobalCliConfiguration(
+        fsCliConfigurationMock() as any
+      );
 
       const detector = new CliPackageManagerDetector();
       const command = detector.detect(app, globalConfig);
