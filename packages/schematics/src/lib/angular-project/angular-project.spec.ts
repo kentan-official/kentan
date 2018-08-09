@@ -34,9 +34,9 @@ describe('Angular Project', () => {
         expect(project.getAppDirectoryPath()).toBe('src/app');
       });
 
-      describe('When a packageManager is configured', () => {
-        it.only('should yield the present packageManager', () => {
-          const config = { packageManager: 'yarn', apps: [] };
+      describe('When a packageM manager is configured', () => {
+        it.only('should yield the present package manager', () => {
+          const config = { packageManager: 'yarn', apps: [{}] };
           tree.create('.angular-cli.json', JSON.stringify(config));
 
           const project = new AngularProject(tree);
@@ -44,9 +44,9 @@ describe('Angular Project', () => {
         });
       });
 
-      describe('When a packageManager is not configured', () => {
-        it('should yield the present packageManager', () => {
-          const config = { apps: [] };
+      describe('When a package manager is not configured', () => {
+        it('should yield the present package manager', () => {
+          const config = { apps: [{ root: 'src' }] };
           tree.create('.angular-cli.json', JSON.stringify(config));
 
           const project = new AngularProject(tree);

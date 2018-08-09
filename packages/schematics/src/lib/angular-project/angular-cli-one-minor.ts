@@ -25,9 +25,9 @@ export class AngularCliOneMinor implements AngularCliProject {
   }
 
   private _throwIfNoAppsDefined(config: AngularCliMinorOneConfiguration) {
-    if (!config.apps) {
+    if (!Array.isArray(config.apps) || config.apps.length < 1) {
       throw new KentanError(
-        'Sorry, it seems that no apps are defined in .angular-cli.json.'
+        'kentan-schematics: Sorry, it seems that no apps are defined in .angular-cli.json.'
       );
     }
   }

@@ -1,6 +1,15 @@
 import { AngularCliOneMinor } from './angular-cli-one-minor';
 
 describe('Angular CLI Version 1.x', () => {
+  describe('When no apps are defined', () => {
+    it('should throw an error', () => {
+      const config = { apps: [] };
+      expect(() => new AngularCliOneMinor(config)).toThrowError(
+        `kentan-schematics: Sorry, it seems that no apps are defined in .angular-cli.json.`
+      );
+    });
+  });
+
   describe('When a single project is defined', () => {
     it('should yield the path of the project root', () => {
       const config = { apps: [{ root: 'src' }] };
@@ -73,19 +82,19 @@ describe('Angular CLI Version 1.x', () => {
     });
   });
 
-  describe('When a packageManager is configured', () => {
-    it('should yield the present packageManager', () => {
+  describe('When a package manager is configured', () => {
+    it('should yield the present package manager', () => {
       const packageManager = 'yarn';
-      const config = { packageManager, apps: [] };
+      const config = { packageManager, apps: [{ root: 'src'}] };
       const project = new AngularCliOneMinor(config);
 
       expect(project.packageManager).toBe(packageManager);
     });
   });
 
-  describe('When a packageManager is not configured', () => {
-    it('should yield the present packageManager', () => {
-      const config = { apps: [] };
+  describe('When a package manager is not configured', () => {
+    it('should yield the present package manager', () => {
+      const config = { apps: [{ root: 'src'}] };
       const project = new AngularCliOneMinor(config);
 
       expect(project.packageManager).toBeUndefined();
