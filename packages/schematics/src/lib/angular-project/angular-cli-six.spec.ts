@@ -1,6 +1,15 @@
 import { AngularCliSix } from './angular-cli-six';
 
 describe('Angular CLI Version 6.x', () => {
+  describe('When no projects are defined', () => {
+    it('should throw an error', () => {
+      const config = { projects: {} };
+      expect(() => new AngularCliSix(config)).toThrowError(
+        `kentan-schematics: Sorry, it seems that no projects are defined in angular.json.`
+      );
+    });
+  });
+
   describe('When a single project is defined', () => {
     it("should yield the path to the project's app directory", () => {
       const config = { projects: { projectA: { root: '' } } };
@@ -83,7 +92,7 @@ describe('Angular CLI Version 6.x', () => {
         const config = { projects: { projectA: { root: '' } } };
         const project = new AngularCliSix(config);
 
-        expect(project.getAppDirectoryPath("0")).toBe('src/app');
+        expect(project.getAppDirectoryPath('0')).toBe('src/app');
       });
     });
 
@@ -99,19 +108,22 @@ describe('Angular CLI Version 6.x', () => {
     });
   });
 
-  describe('When a packageManager is configured', () => {
-    it('should yield the present packageManager', () => {
+  describe('When a package manager is configured', () => {
+    it('should yield the present package manager', () => {
       const packageManager = 'yarn';
-      const config = { cli: { packageManager }, projects: {} };
+      const config = {
+        cli: { packageManager },
+        projects: { app: { root: '' } }
+      };
       const project = new AngularCliSix(config);
 
       expect(project.packageManager).toBe(packageManager);
     });
   });
 
-  describe('When a packageManager is not configured', () => {
-    it('should yield the present packageManager', () => {
-      const config = { projects: {} };
+  describe('When a package manager is not configured', () => {
+    it('should yield the present package manager', () => {
+      const config = { projects: { app: { root: '' } } };
       const project = new AngularCliSix(config);
 
       expect(project.packageManager).toBeUndefined();

@@ -26,7 +26,7 @@ export class AngularCliSix implements AngularCliProject {
   }
 
   private _throwIfNoProjectsDefined(config: AngularCliSixConfiguration) {
-    if (!config.projects) {
+    if (!config.projects || Object.keys(config.projects).length < 1) {
       throw new Error(
         'kentan-schematics: Sorry, it seems that no projects are defined in angular.json.'
       );

@@ -87,9 +87,12 @@ describe('Angular Project', () => {
       });
     });
 
-    describe('When a packageManager is configured', () => {
-      it.only('should yield the present packageManager', () => {
-        const config = { cli: { packageManager: 'yarn' }, projects: {} };
+    describe('When a package manager is configured', () => {
+      it.only('should yield the present package manager', () => {
+        const config = {
+          cli: { packageManager: 'yarn' },
+          projects: { app: { root: '' } }
+        };
         tree.create('angular.json', JSON.stringify(config));
 
         const project = new AngularProject(tree);
