@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "strict": true,
+    "sourceMap": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true
+  }
+}
