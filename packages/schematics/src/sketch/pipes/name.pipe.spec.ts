@@ -1,4 +1,4 @@
-import { SketchMetaData } from '../../lib/contracts';
+import { SketchMetaData } from '@lib/contracts';
 import { name } from './name.pipe';
 
 describe('@name', () => {

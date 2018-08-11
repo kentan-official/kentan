@@ -14,7 +14,8 @@
     "target": "es6",
     "types": ["jest", "node"],
     "paths": {
-      "@core/*": ["../core/src/*"]
+      "@core/*": ["../core/src/*"],
+      "@lib/*": ["src/lib/*"]
     }
   },
   "include": ["src/**/*"],

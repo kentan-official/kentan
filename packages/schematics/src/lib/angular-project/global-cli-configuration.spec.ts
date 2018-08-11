@@ -1,4 +1,4 @@
-import { fsCliConfigurationMock } from '../../test';
+import { fsCliConfigurationMock } from '../../lib/test';
 import { GlobalCliConfiguration } from './global-cli-configuration';
 
 describe('When no global configuration exists', () => {

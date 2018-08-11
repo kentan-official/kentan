@@ -11,10 +11,10 @@ import {
   UnitTestTree
 } from '@angular-devkit/schematics/testing';
 import { join } from 'path';
-import { mockLogger } from '../test/mock-logger';
-import { Match, Warning } from '../lib';
-import { None } from '../lib/option-type/none';
-import { Some } from '../lib/option-type/some';
+import { mockLogger } from '@lib/test/mock-logger';
+import { Match, Warning } from '@lib/index';
+import { None } from '@lib/option-type/none';
+import { Some } from '@lib/option-type/some';
 
 describe('ng g sketch --for <model>', () => {
   let collectionPath: string;

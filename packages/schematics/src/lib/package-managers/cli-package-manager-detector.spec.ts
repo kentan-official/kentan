@@ -1,7 +1,7 @@
 import { VirtualTree } from '@angular-devkit/schematics';
 import { UnitTestTree } from '@angular-devkit/schematics/testing';
 
-import { fsCliConfigurationMock } from '../../test';
+import { fsCliConfigurationMock } from '../../lib/test';
 import { AngularProject } from '../angular-project/angular-project';
 import { GlobalCliConfiguration } from '../angular-project/global-cli-configuration';
 import { AngularCliProject } from '../contracts/angular-cli-project';

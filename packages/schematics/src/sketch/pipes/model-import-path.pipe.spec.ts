@@ -1,4 +1,4 @@
-import { SketchMetaData } from '../../lib/contracts';
+import { SketchMetaData } from '@lib/contracts';
 import { modelImportPath } from './model-import-path.pipe';
 
 describe('@modelImportPath', () => {

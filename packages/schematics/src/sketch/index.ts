@@ -11,10 +11,10 @@ import {
   url
 } from '@angular-devkit/schematics';
 
-import { AngularProject, Match, Warning } from '../lib';
-import { ModelFinder } from '../lib/model-finder/model-finder';
-import { ModelInterpreter } from '../lib/model-interpreter/model-interpreter';
-import { SketchCreator } from '../lib/sketch/sketch';
+import { AngularProject, Match, Warning } from '@lib/index';
+import { ModelFinder } from '@lib/model-finder/model-finder';
+import { ModelInterpreter } from '@lib/model-interpreter/model-interpreter';
+import { SketchCreator } from '@lib/sketch/sketch';
 import { dir, isClass, modelImportPath, name } from './pipes';
 import { SketchParameters } from './schema';
 
