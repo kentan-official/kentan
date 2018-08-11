@@ -1,5 +1,5 @@
-import { Npm } from './npm';
-import { NodePackageInstallerBase } from './node-package-installer-base';
+import { Npm } from '@lib/package-managers/npm';
+import { NodePackageInstallerBase } from '@lib/package-managers/node-package-installer-base';
 
 /**
  * HELP WANTED

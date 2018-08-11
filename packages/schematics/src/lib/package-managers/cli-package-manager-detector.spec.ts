@@ -1,11 +1,11 @@
 import { VirtualTree } from '@angular-devkit/schematics';
 import { UnitTestTree } from '@angular-devkit/schematics/testing';
 
-import { fsCliConfigurationMock } from '../../lib/test';
-import { AngularProject } from '../angular-project/angular-project';
-import { GlobalCliConfiguration } from '../angular-project/global-cli-configuration';
-import { AngularCliProject } from '../contracts/angular-cli-project';
-import { CliPackageManagerDetector } from './cli-package-manager-detector';
+import { fsCliConfigurationMock } from '@lib/test';
+import { AngularProject } from '@lib/angular-project/angular-project';
+import { GlobalCliConfiguration } from '@lib/angular-project/global-cli-configuration';
+import { AngularCliProject } from '@lib/contracts/angular-cli-project';
+import { CliPackageManagerDetector } from '@lib/package-managers/cli-package-manager-detector';
 
 describe('Angular Project does not configure a package manager', () => {
   describe('When no package manager is configured', () => {

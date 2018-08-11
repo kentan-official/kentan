@@ -1,5 +1,5 @@
-import { OptionType } from './option-type';
-import { Reason } from './reason';
+import { OptionType } from '@lib/option-type/option-type';
+import { Reason } from '@lib/option-type/reason';
 
 export class Some<T> implements OptionType<T> {
   constructor(private readonly value: T) {}

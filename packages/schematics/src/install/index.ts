@@ -1,11 +1,11 @@
 import { SchematicContext, Tree } from '@angular-devkit/schematics';
+import { AngularProject, GlobalCliConfiguration } from '@lib/angular-project';
+import {
+  CliPackageManagerDetector,
+  NodePackageInstaller
+} from '@lib/package-managers';
 import { of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-
-import { AngularProject } from '@lib/index';
-import { GlobalCliConfiguration } from '@lib/angular-project/global-cli-configuration';
-import { CliPackageManagerDetector } from '@lib/package-managers/cli-package-manager-detector';
-import { NodePackageInstaller } from '@lib/package-managers/node-package-installer';
 
 export function ngAdd() {
   return (tree: Tree, context: SchematicContext) => {

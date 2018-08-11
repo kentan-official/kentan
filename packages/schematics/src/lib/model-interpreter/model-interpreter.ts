@@ -1,4 +1,4 @@
-import { ModelMetaData } from '../contracts';
+import { ModelMetaData } from '@lib/contracts';
 
 export class ModelInterpreter {
   private _testClass = /(class)\s(\w+)\s/g;

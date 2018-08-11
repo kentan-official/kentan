@@ -1,6 +1,6 @@
 import { Tree, VirtualTree } from '@angular-devkit/schematics';
 
-import { AngularProject } from './angular-project';
+import { AngularProject } from '@lib/angular-project/angular-project';
 
 describe('Angular Project', () => {
   describe('Loading configuration file', () => {

@@ -1,5 +1,5 @@
-import { fsCliConfigurationMock } from '../../lib/test';
-import { GlobalCliConfiguration } from './global-cli-configuration';
+import { fsCliConfigurationMock } from '@lib/test';
+import { GlobalCliConfiguration } from '@lib/angular-project/global-cli-configuration';
 
 describe('When no global configuration exists', () => {
   it('should default to npm', () => {

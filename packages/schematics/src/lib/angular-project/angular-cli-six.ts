@@ -1,6 +1,6 @@
-import { AngularCliSixConfiguration } from '../contracts/angular-cli-six-configuration';
+import { AngularCliSixConfiguration } from '@lib/contracts/angular-cli-six-configuration';
 
-import { AngularCliProject } from '../contracts/angular-cli-project';
+import { AngularCliProject } from '@lib/contracts/angular-cli-project';
 
 export class AngularCliSix implements AngularCliProject {
   readonly version = '^6.x';

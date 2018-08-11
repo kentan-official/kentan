@@ -1,4 +1,4 @@
-import { AngularCliOneMinor } from './angular-cli-one-minor';
+import { AngularCliOneMinor } from '@lib/angular-project/angular-cli-one-minor';
 
 describe('Angular CLI Version 1.x', () => {
   describe('When no apps are defined', () => {

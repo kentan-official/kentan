@@ -1,8 +1,8 @@
 import { fileSync } from 'find';
 import { readFileSync } from 'fs';
-import { Some } from '../option-type/some';
-import { None } from '../option-type/none';
-import { OptionType } from '../option-type/option-type';
+import { Some } from '@lib/option-type/some';
+import { None } from '@lib/option-type/none';
+import { OptionType } from '@lib/option-type/option-type';
 
 export interface ModelSearchResult {
   path: string;

@@ -1,5 +1,5 @@
-import { AngularCliProject } from '../contracts/angular-cli-project';
-import { GlobalCliConfiguration } from "../angular-project/global-cli-configuration";
+import { AngularCliProject } from '@lib/contracts/angular-cli-project';
+import { GlobalCliConfiguration } from "@lib/angular-project/global-cli-configuration";
 export class CliPackageManagerDetector {
   constructor(private _packageManagers = ['npm', 'pnpm', 'yarn']) { }
   detect(app: AngularCliProject, globalConfiguration: GlobalCliConfiguration): string {

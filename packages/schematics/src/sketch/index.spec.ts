@@ -12,7 +12,7 @@ import {
 } from '@angular-devkit/schematics/testing';
 import { join } from 'path';
 import { mockLogger } from '@lib/test/mock-logger';
-import { Match, Warning } from '@lib/index';
+import { Match, Warning } from '../lib';
 import { None } from '@lib/option-type/none';
 import { Some } from '@lib/option-type/some';
 

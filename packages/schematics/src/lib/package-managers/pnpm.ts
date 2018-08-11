@@ -1,3 +1,3 @@
-import { Npm } from './npm';
+import { Npm } from '@lib/package-managers/npm';
 
 export class Pnpm extends Npm {}

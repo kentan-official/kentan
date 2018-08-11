@@ -1,7 +1,7 @@
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { Npm } from './npm';
+import { Npm } from '@lib/package-managers/npm';
 
 const spawnMock = jest.fn();
 spawnMock.mockReturnValue({

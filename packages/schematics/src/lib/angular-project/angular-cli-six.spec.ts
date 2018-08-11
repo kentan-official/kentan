@@ -1,4 +1,4 @@
-import { AngularCliSix } from './angular-cli-six';
+import { AngularCliSix } from '@lib/angular-project/angular-cli-six';
 
 describe('Angular CLI Version 6.x', () => {
   describe('When no projects are defined', () => {

@@ -1,7 +1,7 @@
 import { parse, relative } from 'path';
-import { SketchMetaData } from '../contracts';
-import { ModelFinder } from '../model-finder/model-finder';
-import { ModelInterpreter } from '../model-interpreter/model-interpreter';
+import { SketchMetaData } from '@lib/contracts';
+import { ModelFinder } from '@lib/model-finder/model-finder';
+import { ModelInterpreter } from '@lib/model-interpreter/model-interpreter';
 
 export class SketchCreator {
   private _sketch: SketchMetaData = {

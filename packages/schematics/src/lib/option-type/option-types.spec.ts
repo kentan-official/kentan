@@ -1,6 +1,6 @@
-import { None } from './none';
-import { OptionType } from './option-type';
-import { Some } from './some';
+import { None } from '@lib/option-type/none';
+import { OptionType } from '@lib/option-type/option-type';
+import { Some } from '@lib/option-type/some';
 
 class Developer {
   isHappy(isHappy: boolean): OptionType<string> {

@@ -1,4 +1,4 @@
-import { ModelInterpreter } from './model-interpreter';
+import { ModelInterpreter } from '@lib/model-interpreter/model-interpreter';
 
 describe('ModelInterpreter', () => {
   let content: string;

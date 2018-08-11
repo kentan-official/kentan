@@ -1,7 +1,7 @@
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { Yarn } from './yarn';
+import { Yarn } from '@lib/package-managers/yarn';
 
 const spawnMock = jest.fn();
 spawnMock.mockReturnValue({

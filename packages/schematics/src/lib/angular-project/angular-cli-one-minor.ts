@@ -1,5 +1,5 @@
-import { AngularCliProject } from '../contracts/angular-cli-project';
-import { KentanError } from '../errors/kentan.error';
+import { AngularCliProject } from '@lib/contracts/angular-cli-project';
+import { KentanError } from '@lib/errors/kentan.error';
 
 export interface AngularCliMinorOneConfiguration {
   apps: { root: string }[];
