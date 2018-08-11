@@ -65,7 +65,7 @@ export class AngularProject implements AngularCliProject {
   private _throwIfNoCliFound() {
     if (!this._cli) {
       const files = this._projectTypes.reduce(
-        (files, projectType) => [
+        (files: string[], projectType) => [
           ...files,
           ...projectType.supportedProjectsFiles
         ],
