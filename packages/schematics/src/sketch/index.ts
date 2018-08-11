@@ -1,4 +1,4 @@
-import { strings } from '@angular-devkit/core';
+import { strings } from '@angular-devkit/schematics/node_modules/@angular-devkit/core';
 import { createConsoleLogger } from '@angular-devkit/core/node';
 import {
   apply,
