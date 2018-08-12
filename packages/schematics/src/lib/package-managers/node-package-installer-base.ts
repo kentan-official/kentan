@@ -1,7 +1,7 @@
 import * as child_process from 'child_process';
 import { Observable, Observer } from 'rxjs';
 
-import { ILoadNodePackages } from '@lib/contracts/i-load-node-packages';
+import { ILoadNodePackages } from '../contracts';
 
 export class NodePackageInstallerBase implements ILoadNodePackages {
   private _processSpawnOptions = {

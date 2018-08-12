@@ -8,7 +8,7 @@ jest.resetModules();
 jest.mock('fs', () => mockFs);
 jest.mock('find', () => mockFind);
 
-import { ModelFinder } from '@lib/model-finder/model-finder';
+import { ModelFinder } from './model-finder';
 
 describe('Model Finder', () => {
   let content: string;

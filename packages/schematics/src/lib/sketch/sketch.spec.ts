@@ -8,9 +8,10 @@ jest.resetModules();
 jest.mock('fs', () => mockFs);
 jest.mock('find', () => mockFind);
 
-import { ModelFinder } from '@lib/model-finder/model-finder';
-import { ModelInterpreter } from '@lib/model-interpreter/model-interpreter';
-import { SketchCreator } from '@lib/sketch/sketch';
+import { ModelFinder } from '../model-finder/model-finder';
+import { ModelInterpreter } from '../model-interpreter/model-interpreter';
+import { SketchCreator } from './sketch';
+
 
 describe('Sketch', () => {
   describe('When a model exists for a sketch', () => {

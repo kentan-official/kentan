@@ -1,9 +1,9 @@
 import { SchematicContext, Tree } from '@angular-devkit/schematics';
-import { AngularProject, GlobalCliConfiguration } from '@lib/angular-project';
+import { AngularProject, GlobalCliConfiguration } from '../lib/angular-project';
 import {
   CliPackageManagerDetector,
   NodePackageInstaller
-} from '@lib/package-managers';
+} from '../lib/package-managers';
 import { of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 

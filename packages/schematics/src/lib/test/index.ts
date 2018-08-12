@@ -1,2 +1,2 @@
-export * from '@lib/test/mock-fs';
-export * from '@lib/test/mock-logger';
+export * from './mock-fs';
+export * from './mock-logger';

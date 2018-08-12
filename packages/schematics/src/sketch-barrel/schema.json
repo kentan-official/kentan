@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "kentan:Sketch-Barrel-Schematic",
+  "title": "Sketch Barrel living in sketch directory",
+  "type": "object",
+  "properties": {
+    "app": {
+      "type": "number",
+      "description": "The app where the barrel should be created",
+      "default": 0
+    },
+    "dir": {
+      "type": "string",
+      "description": "The location where the barrel should be created",
+      "default": "test/sketches"
+    }
+  },
+  "required": []
+}

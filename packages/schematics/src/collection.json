@@ -1,19 +1,23 @@
 {
-  "$schema":
-    "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
     "ng-add": {
       "aliases": ["install-kentan"],
       "factory": "./install#ngAdd",
       "schema": "./install/schema.json",
-      "description":
-        "Installs @kentan-official/core & @kentan-official/schematics"
+      "description": "Installs @kentan-official/core & @kentan-official/schematics"
     },
     "sketch": {
       "aliases": ["ks"],
       "factory": "./sketch#create",
       "schema": "./sketch/schema.json",
       "description": "Creates a Sketch for kentan"
+    },
+    "sketch-barrel": {
+      "aliases": ["ksb"],
+      "factory": "./sketch-barrel#create",
+      "schema": "./sketch-barrel/schema.json",
+      "description": "Creates a Barrel exporting all sketches"
     }
   }
 }

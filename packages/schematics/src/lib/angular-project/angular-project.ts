@@ -1,10 +1,9 @@
 import { Tree } from '@angular-devkit/schematics';
-import { CliFactory, ProjectType } from '@lib/contracts';
-import { KentanError } from '@lib/errors/kentan.error';
-import { AngularCliOneMinor } from '@lib/angular-project/angular-cli-one-minor';
-import { AngularCliProject } from '@lib/contracts/angular-cli-project';
-import { AngularCliSix } from '@lib/angular-project/angular-cli-six';
-import { CliCreator, jsonOf } from '@lib/angular-project/helpers';
+import { CliFactory, ProjectType, AngularCliProject } from '../contracts';
+import { KentanError } from '../index';
+import { AngularCliOneMinor } from './angular-cli-one-minor';
+import { AngularCliSix } from './angular-cli-six';
+import { CliCreator, jsonOf } from './helpers';
 
 export class AngularProject implements AngularCliProject {
   private readonly _cli: AngularCliProject;

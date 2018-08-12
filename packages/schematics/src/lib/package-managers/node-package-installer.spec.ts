@@ -1,7 +1,7 @@
-import { NodePackageInstaller } from '@lib/package-managers/node-package-installer';
-import { Npm } from '@lib/package-managers/npm';
-import { Pnpm } from '@lib/package-managers/pnpm';
-import { Yarn } from '@lib/package-managers/yarn';
+import { NodePackageInstaller } from './node-package-installer';
+import { Npm } from './npm';
+import { Pnpm } from './pnpm';
+import { Yarn } from './yarn';
 
 describe('When npm is configured', () => {
   it('should yield npm', () => {

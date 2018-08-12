@@ -1,4 +1,4 @@
-import { ModelMetaData } from '@lib/contracts/model-metadata';
+import { ModelMetaData } from '../contracts';
 
 export interface SketchMetaData {
   name: string;

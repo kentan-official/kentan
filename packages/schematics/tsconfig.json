@@ -12,11 +12,7 @@
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "target": "es6",
-    "types": ["jest", "node"],
-    "paths": {
-      "@core/*": ["../core/src/*"],
-      "@lib/*": ["src/lib/*"]
-    }
+    "types": ["jest", "node"]
   },
   "include": ["src/**/*"],
   "exclude": ["src/*/templates/**/*", "build/*/**"]

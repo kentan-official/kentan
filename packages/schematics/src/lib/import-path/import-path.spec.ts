@@ -4,7 +4,7 @@ const mockFind = { fileSync: mockFileSync };
 jest.resetModules();
 jest.mock('find', () => mockFind);
 
-import { ImportPath } from '@lib/import-path/import-path';
+import { ImportPath } from './import-path';
 
 describe('ImportPath', () => {
   let root: string;

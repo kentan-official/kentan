@@ -1,4 +1,4 @@
-import { strings } from '@angular-devkit/schematics/node_modules/@angular-devkit/core';
+import { strings } from '@angular-devkit/core';
 import { createConsoleLogger } from '@angular-devkit/core/node';
 import {
   apply,
@@ -11,10 +11,14 @@ import {
   url
 } from '@angular-devkit/schematics';
 
-import { AngularProject, Match, Warning } from '../lib';
-import { ModelFinder } from '@lib/model-finder/model-finder';
-import { ModelInterpreter } from '@lib/model-interpreter/model-interpreter';
-import { SketchCreator } from '@lib/sketch/sketch';
+import {
+  AngularProject,
+  Match,
+  ModelFinder,
+  ModelInterpreter,
+  SketchCreator,
+  Warning
+} from '../lib';
 import { dir, isClass, modelImportPath, name } from './pipes';
 import { SketchParameters } from './schema';
 
