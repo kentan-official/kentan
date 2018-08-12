@@ -8,10 +8,10 @@
 
   --background: #FFFFFF;
 
-  --text-primary: #FFFFFF;
-  --text-primary-light: #FFFFFF;
-  --text-primary-lighter: #FFFFFF;
-  --text-accent: #FFFFFF;
+  --text-primary: rgba(255,255,255,0.87);
+  --text-primary-light: rgba(255,255,255,0.87);
+  --text-primary-lighter: rgba(255,255,255,0.87);
+  --text-accent: rgba(255,255,255,0.87);
   
   --primary-text: rgba(0,0,0,0.87);
   --secondary-text: rgba(0,0,0,0.54);
@@ -91,7 +91,7 @@
 }
 
 .kentan-theme .poster-border {
-  top: 2px;
+  top: 3px;
   background-color: var(--primary);
 }
 
@@ -112,6 +112,10 @@
 .kentan-theme .shade-accent-2 {
   background-position: 0 0;
   background-image: linear-gradient(217deg, rgba(245,143,96,0.2) 5%, rgba(245,143,96,0) 40%);
+}
+
+.kentan-theme .poster-divider {
+  display: none
 }
 
 .kentan-theme .product-logo .stem {
@@ -135,9 +139,8 @@
   z-index: 1;
   display: grid;
   grid-template-columns: 20px 1fr 20px;
-  grid-template-rows: 15vh auto auto auto 1fr 160px;
+  grid-template-rows: 15vh auto auto 1fr 160px;
   justify-items: center;
-  margin-bottom: 1.5rem;
   height: 100vh;
 }
 
@@ -148,15 +151,20 @@
   grid-row: 2 / 3;
 }
 
+.kentan-theme .topic-title {
+  display: flex;
+  flex-direction: column;
+
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
 .kentan-theme .title {
   margin: 0.5rem 0 0;
   color: var(--text-primary);
   font-size: calc(1rem / 16 * 69);
   line-height: 1;
   font-weight: 200;
-
-  grid-column: 2 / 3;
-  grid-row: 3 / 4;
 }
 
 .kentan-theme .subtitle {
@@ -165,9 +173,6 @@
   font-size: calc(1rem / 16 * 23);
   text-align: center;
   font-weight: 100;
-
-  grid-column: 2 / 3;
-  grid-row: 4 / 5;
 }
 
 .kentan-theme .controls {
@@ -175,7 +180,7 @@
   flex-direction: column;
 
   grid-column: 2 / 3;
-  grid-row: 6 / 7;
+  grid-row: 5 / 6;
   justify-self: end;
   align-self: center;
 }
@@ -308,4 +313,109 @@
 
   -webkit-clip-path: url(#stem-clip);
   clip-path: url(#stem-clip);
+}
+
+@media (min-width: 1024px) {
+
+  .kentan-theme .background-poster {
+    height: 113.4vh;
+  }
+
+  .kentan-theme .poster-border,
+  .kentan-theme .poster {
+    -webkit-clip-path: polygon(100% 0, 100% 90%, 72% 100%, 44% 60%, 0 79%, 0 0);
+    clip-path: polygon(100% 0, 100% 90%, 72% 100%, 44% 60%, 0 79%, 0 0);
+  }
+
+
+  .kentan-theme .shade-primary,
+  .kentan-theme .shade-accent-2 {
+    -webkit-clip-path: polygon(75% 0, 44% 60%, 0 79%, 0 0);
+    clip-path: polygon(75% 0, 44% 60%, 0 79%, 0 0);
+  }
+
+  .kentan-theme .shade-accent-1 {
+    -webkit-clip-path: polygon(75% 0, 100% 0, 100% 90%, 72% 100%, 44% 60%);
+    clip-path: polygon(75% 0, 100% 0, 100% 90%, 72% 100%, 44% 60%);
+  }
+
+  .kentan-theme .shade-primary {
+    background-image: linear-gradient(247deg, rgba(96,37,88,0.1) 40%, rgba(96,37,88,1) 87%);
+  }
+
+  .kentan-theme .shade-accent-1 {
+    background-image: linear-gradient(141deg, rgba(96,37,88,0.3) 40%, rgba(245,143,96,0.7) 70%);
+  }
+
+  .kentan-theme .shade-accent-2 {
+    background-image: linear-gradient(307deg, rgba(245,143,96,0.03) 60%, rgba(245,143,96,0.1) 65%, rgba(245,143,96,0.4) 90%);
+  }
+
+  .kentan-theme .poster-border {
+    top: 3px;
+  }
+
+  .kentan-theme .poster-divider {
+    position: absolute;
+    display: block;
+    top: -2px;
+    left: 44%;
+    width: 31%;
+    height: calc(60% + 4px);
+  }
+
+  .kentan-theme .poster-divider line {
+    stroke: var(--primary);
+    stroke-width: 2px;
+  }
+
+  .kentan-theme .first-impression {
+    grid-template-columns: calc(1rem / 16 * 80) auto calc(1rem / 16 * 60) auto 1fr;
+    grid-template-rows: 68vh 10vh 22vh;
+    justify-items: start;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .kentan-theme .first-impression > .product-logo {
+    width: auto;
+    height: calc(1rem / 16 * 190);
+  
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    align-self: center;
+  }
+
+  .kentan-theme .topic-title {
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+    align-self: center;
+  }
+
+  .kentan-theme .title {
+    font-size: calc(1rem / 16 * 95);
+    font-weight: 100;
+  }
+  
+  .kentan-theme .subtitle {
+    font-size: calc(1rem / 16 * 32);
+  }
+  
+  .kentan-theme .controls {
+    flex-direction: row-reverse;
+  
+    grid-column: 3 / 6;
+    grid-row: 3 / 4;
+    justify-self: start;
+    align-self: center;
+  }
+
+  .kentan-theme .controls :first-child {
+    margin-bottom: 0;
+  }
+
+  .kentan-theme .controls :last-child {
+    margin-left: calc(1rem / 16 * -5);
+    margin-right: calc(1rem / 16 * 50);
+  }
 }
