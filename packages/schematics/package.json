@@ -1,6 +1,6 @@
 {
   "name": "@kentan-official/schematics",
-  "version": "1.7.1",
+  "version": "2.0.0",
   "description": "Schematics for @kentan-official/core automating creation of sketches",
   "repository": {
     "type": "git",
@@ -36,7 +36,10 @@
       "^.+\\.tsx?$": "ts-jest"
     },
     "testRegex": "((\\.|/)(spec))\\.ts$",
-    "coverageReporters": ["lcov", "text"],
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ],
     "moduleFileExtensions": [
       "js",
       "ts"

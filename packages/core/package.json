@@ -1,6 +1,6 @@
 {
   "name": "@kentan-official/core",
-  "version": "1.7.1",
+  "version": "2.0.0",
   "description": "This small framework has the goal to provide a more efficient way to generate test data.",
   "keywords": [
     "typescript",
@@ -71,7 +71,10 @@
       "/node_modules/",
       "/test/"
     ],
-    "coverageReporters": ["lcov", "text"],
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ],
     "coverageThreshold": {
       "global": {
         "branches": 90,
@@ -101,9 +104,9 @@
   "devDependencies": {
     "@types/jest": "^23.3.1",
     "@types/node": "^9.3.0",
+    "codecov": "^3.0.4",
     "colors": "^1.1.2",
     "commitizen": "^2.9.6",
-    "codecov": "^3.0.4",
     "cross-env": "^5.0.1",
     "cz-conventional-changelog": "^2.0.0",
     "husky": "^0.14.0",
