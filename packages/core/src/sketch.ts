@@ -16,7 +16,7 @@ export declare type ModelFactory<T> = T;
 export class Sketch<T> implements OverwritableSketch<T> {
   private _createModel: () => T;
 
-  constructor(private _token: T | Constructable<T>, defaults?: T) {
+  constructor(private _token: T | Constructable<T>, defaults?: Partial<T>) {
     if (typeof _token === 'object') {
       this._createModel = this._createFromInstance(_token, defaults);
     } else {
@@ -56,11 +56,14 @@ export class Sketch<T> implements OverwritableSketch<T> {
     return Object.assign(this._createModel(), overrides);
   }
 
-  private _createFromInstance(model: T, _defaults?: T): () => T {
+  private _createFromInstance(model: T, _defaults?: Partial<T>): () => T {
     return () => Object.assign(model, _defaults);
   }
 
-  private _constructInstance(Model: Constructable<T>, _defaults?: T): () => T {
+  private _constructInstance(
+    Model: Constructable<T>,
+    _defaults?: Partial<T>
+  ): () => T {
     return () => Object.assign(new Model(), _defaults);
   }
 
