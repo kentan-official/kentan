@@ -4,7 +4,16 @@ class Empty {
   id: string;
 }
 
+class EmptyNumericId {
+  id: number;
+}
+
 class ForEmpty extends Sketch<Empty> {
+  constructor() {
+    super(Empty);
+  }
+}
+class ForEmptyNumericId extends Sketch<EmptyNumericId> {
   constructor() {
     super(Empty);
   }
@@ -71,5 +80,17 @@ describe('When a list of test data is needed', () => {
     expect(models[0].id).toBe('0');
     expect(models[1].id).toBe('1');
     expect(models[2].id).toBe('2');
+  });
+
+  it('should pass different numeric indexes to elements in list', () => {
+    const models = Kentan.sketch(ForEmptyNumericId)
+      .take(3)
+      .models({
+        id: index => index
+      });
+
+    expect(models[0].id).toBe(0);
+    expect(models[1].id).toBe(1);
+    expect(models[2].id).toBe(2);
   });
 });
