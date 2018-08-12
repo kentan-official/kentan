@@ -1,0 +1,31 @@
+:root {
+  --primary: #602558;
+  --primary-light: #783A6F;
+  --primary-lighter: #95568C;
+  --accent: #F58F60;
+  --accent-dark: #F58F60;
+  --accent-darker: #c35420;
+
+  --background: #FFFFFF;
+
+  --text-primary: #FFFFFF;
+  --text-primary-light: #FFFFFF;
+  --text-primary-lighter: #FFFFFF;
+  --text-accent: #FFFFFF;
+  
+  --primary-text: rgba(0,0,0,0.87);
+  --secondary-text: rgba(0,0,0,0.54);
+  --disabled-text: rgba(0,0,0,0.38);
+  --hint: rgba(0,0,0,0.38);
+  --divider: rgba(0,0,0,0.12);
+
+  --shade: rgba(0,0,0,0.03);
+  --shade-primary: rgba(96,37,88,0.03);
+  --shade-accent: rgba(245,143,96,0.15);
+
+  --shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
+  --inset-shadow: inset 0 2px 5px 0 rgba(0,0,0,0.26);
+
+  font-family: Source Sans Pro,Helvetica Neue,Arial,sans-serif;
+  line-height: 1.5;
+}
