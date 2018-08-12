@@ -264,6 +264,18 @@
   margin-left: 0;
 }
 
+.kentan-theme .sidebar ul ul ul {
+  padding-left: 1rem;
+}
+
+.kentan-theme .sidebar ul ul ul li a::before {
+  display: none;
+}
+
+.kentan-theme .sidebar li a:visited {
+  color: var(--secondary-text);
+}
+
 .kentan-theme .sidebar li a::before {
   display: inline-block;
   vertical-align: middle;
