@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.3"></a>
+## [2.0.3](https://github.com/kentan-official/kentan/compare/v2.0.2...v2.0.3) (2018-08-12)
+
+
+### Bug Fixes
+
+* **core:sketch:** ensure immutability of each created sketch ([4e30c5f](https://github.com/kentan-official/kentan/commit/4e30c5f))
+* **sidebar:** show simple list style type for nested nav links ([89e2602](https://github.com/kentan-official/kentan/commit/89e2602))
+
+
+### Features
+
+* add favicon ([a405bd1](https://github.com/kentan-official/kentan/commit/a405bd1))
+* **coverPage:** create anew using new design ([01d088a](https://github.com/kentan-official/kentan/commit/01d088a))
+* **docsifyConfig:** set new logo ([3da03e2](https://github.com/kentan-official/kentan/commit/3da03e2))
+* **gettingStarted:** transform headline into h2 element ([4a153c1](https://github.com/kentan-official/kentan/commit/4a153c1))
+* **newPageDesign:** apply new design to home page content ([776f717](https://github.com/kentan-official/kentan/commit/776f717))
+* **ressources:** add new logo images ([aca2561](https://github.com/kentan-official/kentan/commit/aca2561))
+* **ressources:** add poster image for cover page ([e0bfe75](https://github.com/kentan-official/kentan/commit/e0bfe75))
+* **theme:** create CSS theme variables ([31842ff](https://github.com/kentan-official/kentan/commit/31842ff))
+* **theme:** import CSS theme variables into app ([b6f26f2](https://github.com/kentan-official/kentan/commit/b6f26f2))
+
+
+
+
+
 <a name="2.0.2"></a>
 ## [2.0.2](https://github.com/kentan-official/kentan/compare/v2.0.1...v2.0.2) (2018-08-12)
 
