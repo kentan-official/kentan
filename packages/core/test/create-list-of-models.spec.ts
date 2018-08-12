@@ -15,7 +15,7 @@ class ForEmpty extends Sketch<Empty> {
 }
 class ForEmptyNumericId extends Sketch<EmptyNumericId> {
   constructor() {
-    super(Empty);
+    super(EmptyNumericId);
   }
 }
 
