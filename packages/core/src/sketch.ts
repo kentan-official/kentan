@@ -57,7 +57,7 @@ export class Sketch<T> implements OverwritableSketch<T> {
   }
 
   private _createFromInstance(model: T, _defaults?: Partial<T>): () => T {
-    return () => Object.assign(model, _defaults);
+    return () => Object.assign(Object.create(model as Object), _defaults);
   }
 
   private _constructInstance(
