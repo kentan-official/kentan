@@ -60,4 +60,16 @@ describe('When a list of test data is needed', () => {
 
     expect(models[2].id).toBe(expectedId);
   });
+
+  it('should pass different indexes to elements in list', () => {
+    const models = Kentan.sketch(ForEmpty)
+      .take(3)
+      .models({
+        id: index => index.toString()
+      });
+
+    expect(models[0].id).toBe('0');
+    expect(models[1].id).toBe('1');
+    expect(models[2].id).toBe('2');
+  });
 });
