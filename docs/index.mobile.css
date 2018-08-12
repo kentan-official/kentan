@@ -29,3 +29,189 @@
   font-family: Source Sans Pro,Helvetica Neue,Arial,sans-serif;
   line-height: 1.5;
 }
+
+.kentan-theme body {
+  margin: 0;
+}
+
+.kentan-theme h1,h2,h3,h4,h5,h6 {
+  color: var(--primary-text);
+}
+
+.kentan-theme p {
+  color: var(--secondary-text);
+}
+
+.kentan-theme a {
+  color: var(--accent);
+}
+
+.kentan-theme a:visited {
+  color: var(--accent-darker);
+}
+
+.kentan-theme code {
+  border-radius: 3px;
+  padding: 0.15rem 0.375rem;
+  background-color: var(--shade-accent);
+  color: var(--primary-lighter);
+}
+
+.kentan-theme .background-poster {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 80vh;
+}
+
+.kentan-theme .poster-border,
+.kentan-theme .poster,
+.kentan-theme .shade-primary,
+.kentan-theme .shade-accent-1,
+.kentan-theme .shade-accent-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: polygon(100% 0, 100% 75%, 35% 100%, 0 85%, 0 0);
+  clip-path: polygon(100% 0, 100% 75%, 35% 100%, 0 85%, 0 0);
+}
+
+.kentan-theme .poster-border {
+  top: 2px;
+  background-color: var(--primary);
+}
+
+.kentan-theme .poster {
+  object-fit: cover;
+}
+
+.kentan-theme .shade-primary {
+  background-position: 0 0;
+  background-image: linear-gradient(148deg, rgba(96,37,88,1) 6%, rgba(96,37,88,0.1) 50%);
+}
+
+.kentan-theme .shade-accent-1 {
+  background-position: 0 0;
+  background-image: linear-gradient(335deg, rgba(245,143,96,0.5) 15%, rgba(245,143,96,0.2) 60%);
+}
+
+.kentan-theme .shade-accent-2 {
+  background-position: 0 0;
+  background-image: linear-gradient(217deg, rgba(245,143,96,0.2) 5%, rgba(245,143,96,0) 40%);
+}
+
+.kentan-theme .product-logo .stem {
+  fill: var(--accent);
+}
+
+.kentan-theme .product-logo .left-petal {
+  fill: var(--primary);
+}
+
+.kentan-theme .product-logo .right-petal {
+  fill: var(--primary-light);
+}
+
+.kentan-theme .product-logo .middle-petal {
+  fill: var(--primary-lighter);
+}
+
+.kentan-theme .first-impression {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  grid-template-rows: 15vh auto auto auto 1fr 160px;
+  justify-items: center;
+  margin-bottom: 1.5rem;
+  height: 100vh;
+}
+
+.kentan-theme .first-impression > .product-logo {
+  width: calc(1rem / 16 * 100);
+
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.kentan-theme .title {
+  margin: 0.5rem 0 0;
+  color: var(--text-primary);
+  font-size: calc(1rem / 16 * 69);
+  line-height: 1;
+  font-weight: 200;
+
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
+.kentan-theme .subtitle {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: calc(1rem / 16 * 23);
+  text-align: center;
+  font-weight: 100;
+
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+}
+
+.kentan-theme .controls {
+  display: flex;
+  flex-direction: column;
+
+  grid-column: 2 / 3;
+  grid-row: 6 / 7;
+  justify-self: end;
+  align-self: center;
+}
+
+.kentan-theme .controls :first-child {
+  margin-bottom: 20px;
+}
+
+.kentan-theme .flat-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: calc(1em / 16 * 10 * 15); /* if 1em = 16px -> 150px */
+  height: calc(1em / 16 * 10 * 5); /* if 1em = 16px -> 50px */
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.kentan-theme .flat-button:active {
+  box-shadow: var(--inset-shadow);
+  transition: none;
+}
+
+.kentan-theme .round.flat-button {
+  border-radius: calc(1em / 16 * 10 * 5 / 2);
+}
+
+.kentan-theme .flat-button.primary {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.kentan-theme .flat-button.primary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.kentan-theme .flat-button.filled.primary {
+  background-color: var(--primary);
+  color: var(--text-primary);
+}
+
+.kentan-theme .flat-button.filled.primary:hover {
+  background-color: var(--accent);
+  color: var(--text-accent);
+}
