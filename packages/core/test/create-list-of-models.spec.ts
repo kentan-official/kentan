@@ -47,4 +47,17 @@ describe('When a list of test data is needed', () => {
 
     expect(models[0].id).toBe(expectedId);
   });
+
+  it('should pass the index of the respective model when more than one items are added', () => {
+    const id = '12-34-56-78-';
+    const expectedId = '12-34-56-78-2';
+
+    const models = Kentan.sketch(ForEmpty)
+      .take(3)
+      .models({
+        id: index => `${id}${index}`
+      });
+
+    expect(models[2].id).toBe(expectedId);
+  });
 });

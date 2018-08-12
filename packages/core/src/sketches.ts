@@ -12,13 +12,14 @@ export class Sketches<T> {
   }
 
   models(generators: PartialFactory<T> = {}): T[] {
-    const overrides = this._resolve(generators);
-    return this._sketches.map(sketch => sketch.model(overrides));
+    return this._sketches.map((sketch, index) =>
+      sketch.model(this._resolve(generators, index))
+    );
   }
 
-  private _resolve(generators: PartialFactory<T>): Partial<T> {
+  private _resolve(generators: PartialFactory<T>, index: number): Partial<T> {
     return Object.keys(generators)
-      .map((key, index) => ({
+      .map(key => ({
         [key]: (generators as any)[key](index)
       }))
       .reduce(
