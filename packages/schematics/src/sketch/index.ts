@@ -10,6 +10,7 @@ import {
   Tree,
   url
 } from '@angular-devkit/schematics';
+import { EOL } from 'os';
 
 import {
   AngularProject,
@@ -19,6 +20,7 @@ import {
   SketchCreator,
   Warning
 } from '../lib';
+import { SketchMetaData } from '../lib/contracts';
 import { dir, isClass, modelImportPath, name } from './pipes';
 import { SketchParameters } from './schema';
 
@@ -60,6 +62,8 @@ function createSketch(
     })
   ]);
 
+  updateBarrelIfItExists(tree, sketch);
+
   return branchAndMerge(mergeWith(templates))(tree, context);
 }
 
@@ -73,5 +77,15 @@ function logIfImportIsGeneratedAutomatically(
     log.info(
       Warning(`Model not found. Could not generate import for "${model}"`)
     );
+  }
+}
+
+function updateBarrelIfItExists(tree: Tree, sketch: SketchMetaData) {
+  const sketchBarrelPath = `${sketch.dir}/index.ts`;
+  if (tree.exists(sketchBarrelPath)) {
+    const existingExports = tree.read(sketchBarrelPath)!.toString();
+    const newExport = `export * from './${sketch.name}.sketch';${EOL}`;
+    const updatedBarrel = existingExports + newExport;
+    tree.overwrite(sketchBarrelPath, updatedBarrel);
   }
 }

@@ -5,6 +5,7 @@ const mockFind = { fileSync: mockFileSync };
 
 jest.mock('find', () => mockFind);
 
+import { EOL } from 'os';
 import { VirtualTree } from '@angular-devkit/schematics';
 import {
   SchematicTestRunner,
@@ -153,6 +154,35 @@ describe('ng g sketch --for <model>', () => {
       );
 
       expect(content).toContain(expected);
+    });
+  });
+
+  describe('When a barrel exists', () => {
+    beforeEach(() => {
+      const config = { apps: [{ root: 'src' }] };
+      runner = new SchematicTestRunner('kentan', collectionPath);
+      actualTree = new UnitTestTree(new VirtualTree());
+      actualTree.create('.angular-cli.json', JSON.stringify(config));
+      actualTree.create('src/app/test/sketches/index.ts', '');
+
+      jest.resetModules();
+      jest.mock('@angular-devkit/core/node', () => mockLogger.factory);
+      useModelFinderMock({
+        notFound: false,
+        path: 'src/app/models/customer.ts',
+        content: 'export class Customer {'
+      });
+    });
+
+    it('should export the generated sketch', () => {
+      const tree = runner.runSchematic(
+        'sketch',
+        { name: 'customer' },
+        actualTree
+      );
+
+      const barrel = tree.readContent('src/app/test/sketches/index.ts');
+      expect(barrel).toBe(`export * from './customer.sketch';${EOL}`);
     });
   });
 });
