@@ -7,9 +7,9 @@
     "test",
     "generator"
   ],
-  "main": "dist/kentan.umd.js",
-  "module": "dist/kentan.es5.js",
-  "typings": "dist/types/kentan.d.ts",
+  "main": "dist/core.umd.js",
+  "module": "dist/core.es5.js",
+  "typings": "dist/types/core.d.ts",
   "files": [
     "dist"
   ],
