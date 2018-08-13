@@ -341,10 +341,8 @@ The following snippet shows how you can generate a different `id` for each
 ...
 ```
 
-Passing this generator function you will get the following id properties:
-- `my-id-0`
-- `my-id-1`
-
+Passing this generator function you will get the following id properties
+`my-id-0`, `my-id-1`.
 You see, Kentan really tries to give you the full control over you test data.
 
 ## Conclusion
