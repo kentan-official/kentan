@@ -354,7 +354,9 @@ Hopefully you find this beneficial for you project.
 There are still a few feature we have not covered yet.
 The Sketch contains two more helpers providing even more comfort to maintain 
 your test data.
-If you want to learn more please check out the helpers [get]() and [set]().
+
+?> If you want to dive deeper, you can learn more about the Sketch API reading 
+the article about [get]() and [set]().
 
 Rock On & Code 
 
