@@ -16,3 +16,5 @@ It reduces the boilerplate and provides reusable _Sketches_ which allow you to a
 Your feedback is always welcome!
 
 You can file [issues](https://github.com/kentan-official/kentan/issues) and create [pull requests](https://github.com/kentan-official/kentan/pulls) on the Kentan Github repository. The [contributing guide](https://github.com/kentan-official/kentan/blob/master/CONTRIBUTING.md) will help you contribute to this project.
+
+The project setup is documented in the [Wiki](https://github.com/kentan-official/kentan/wiki).
