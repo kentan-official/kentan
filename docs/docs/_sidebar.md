@@ -5,7 +5,7 @@
   - [Sketch](fundamentals/sketch.md)
   - [Factory](fundamentals/factory.md)
 - **Guide**
-  - [Compose Sketches](guide/compose-sketches.md)
+  - [Use Existing Model Instances](guide/use-existing-model-instances.md)
   - [Create Sketch list](guide/create-sketch-list.md)
   - [Generate Random Values](guide/generate-random-values.md)
 - **Angular CLI**
