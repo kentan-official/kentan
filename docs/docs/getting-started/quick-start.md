@@ -13,11 +13,11 @@ npm install
 npm test
 ```
 
-You will find two directories named :file_folder: `models` and :file_folder: `test`.
+You will find two directories named `models` and `test`.
 
 - INSERT IMAGES HERE
 
-You will see that :page_facing_up: `test/order.spec.ts` contains a test that manually sets up test data.
+You will see that `test/order.spec.ts` contains a test that manually sets up test data.
 
 > This sample shall give you the idea which problems occur if you need to setup test data in large web projects.
 
@@ -28,7 +28,7 @@ Now we will use _Kentan_ to refactor the test setup.
 You may have noticed that we deal with three models that relates to each other
 A `ShoppingBasket` has multiple Positions. A `Position` has multiple `Product`s.
 
-![Quick-Start-Models](./assets/quick-start-models.png)
+![Quick-Start-Models](./assets/shopping-basket.png)
 
 To provide reusable test data builder for all future tests we now introduce _Kentan_.
 Please install the library via `npm`.
@@ -37,7 +37,7 @@ Please install the library via `npm`.
 npm install --save-dev kentan
 ```
 
-After the installation has finished we create a folder named :file_folder: `sketches`. In there we will create a [Sketch]() for each model that we nee to test.
+After the installation has finished we create a folder named `sketches`. In there we will create a [Sketch]() for each model that we nee to test.
 
 ## Create your first Sketch
 
@@ -52,14 +52,14 @@ import { Sketch } from '@kentan-official/core';
 import { Product } from '../models';
 
 export class ForProduct extends Sketch<Product> {
-  super({
-    id: '1-2-3',
-    name: 'My Product'
-  });
+ super({
+ id: '1-2-3',
+ name: 'My Product'
+ });
 }
 ```
 
-Congratulations :clap::clap:, now you can use the `Sketch` to tidy up the test in :file_folder: `test/product.spec.ts`.
+Congratulations :clap::clap:, now you can use the `Sketch` to tidy up the test in `test/product.spec.ts`.
 
 ```diff
 // test/product.spec.ts
@@ -70,8 +70,8 @@ Congratulations :clap::clap:, now you can use the `Sketch` to tidy up the test i
 
 + const product = Kentan.sketch(ForProduct).model();
 - const product = {
--   id: '1-2-3',
--   name: 'My Product'
+- id: '1-2-3',
+- name: 'My Product'
 - }
 ```
 
