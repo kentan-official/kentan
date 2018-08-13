@@ -14,13 +14,15 @@
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "docs": "live-server ./docs --port=4177",
     "test": "lerna run test:prod",
     "build": "lerna run build:prod",
     "codecov": "codecov",
     "release": "lerna publish"
   },
   "devDependencies": {
-    "lerna": "^3.0.0-rc.0"
+    "lerna": "^3.0.0-rc.0",
+    "live-server": "^1.2.0"
   },
   "repository": {
     "type": "git",
