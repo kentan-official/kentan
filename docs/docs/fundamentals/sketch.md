@@ -5,7 +5,7 @@ If you want to get started with Kentan please have a look at the [Quick Start](.
 
 ## Create a Sketch
 
-There a three different ways to create a Sketch in Kentan:
+There three different ways to create a Sketch in Kentan:
 
 - from an Interface
 - from a Class having now constructor parameters
@@ -30,7 +30,7 @@ export class ForProduct extends Sketch<Product> {}
 ```
 
 You now have the basic setup.
-Next we need to provide the default data for the Sketch.
+Next, we need to provide the default data for the Sketch.
 Therefore we add a constructor to the Sketch class.
 
 ```ts
@@ -50,7 +50,7 @@ Kentan.sketch(ForProduct).model().id // id = 1
 
 ### Class
 
-Kentan also can setup class instances for you.
+Kentan also can set up class instances for you.
 In comparison to the [Interface] the `super`-call takes 2 arguments.
 
 ```ts
@@ -79,10 +79,10 @@ section.
 
 ### Existing Class Instance
 
-Maybe you already use model classes that needs one or more parameters to get
+Maybe you already use model classes that need one or more parameters to get
 instantiated.
 Kentan is **not** able to resolve these dependencies automatically.
-In order to create a Sketch you are kindly invited to do the instantiation on you own. :angel:
+In order to create a Sketch, you are kindly invited to do the instantiation on your own. :angel:
 
 ```ts
 export class Order {
@@ -103,7 +103,7 @@ export class ForOrder extends Sketch<Order> {
 
 ## Handle Sketch Data
 
-A Sketch provide some helper allowing you to control your generated test data.
+The Sketch provides some helper allowing you to control your generated test data.
 
 - [`model`](fundamentals/sketch?id=model-optionaloverrideslttgt) to read and configure all model properties.
 - [`set`](fundamentals/sketch?id=setmapfn) to override a certain value of a model no matter how deeply it is nested
@@ -130,7 +130,7 @@ const product = Kentan.sketch(ForProduct).model({ priceInDollars: 999 });
 
 The function `set` becomes pretty handy if you deal with large and deep nested
 object trees.
-For certain tests you only need to adjust a certain piece of an object tree.
+For certain tests, you only need to adjust a certain piece of an object tree.
 Instead of calling `model` over and over again you can pass a mapping function
 to set the desired values.
 The following example shows you how `set` works.
@@ -155,8 +155,8 @@ const structure = sketch
 
 The counterpart to [`set`](fundamentals/sketch?id=setmapfn) is the `get`
 function.
-Some times you want to read a property of the generated data for doing
-assertions in you tests.
+Sometimes you want to read a property of the generated data for doing
+assertions in your tests.
 You achieve this by passing a projection function.
 The next example shows you how this works.
 
