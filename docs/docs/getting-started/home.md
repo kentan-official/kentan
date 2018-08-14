@@ -12,10 +12,10 @@ See the [Quick Start](getting-started/quick-start.md) for more details.
 
 ## Features
 
-- Organizes your test data
-- Makes your test data reusable
-- Configures test data with ease
-- Provides tooling for [Angular CLI](https://cli.angular.io) projects
+- [Sketch](fundamentals/sketch.md) creating reusable test data
+- [Generator](getting-started/quick-start?id=take-a-sketch-list) to build configurable Sketch-Lists
+- [Helpers](fundamentals/sketch?id=handle-sketch-data) to configure Sketches
+- [Tooling for Angular](angular-cli/schematics.md) generating Sketchs automaticallu
 
 ## Feedback
 
