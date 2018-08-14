@@ -101,13 +101,75 @@ export class ForOrder extends Sketch<Order> {
 > If the model class is more complex, please remember that you can use already
 > existing Sketches to set everything up.
 
-## Configure Test Data
+## Handle Sketch Data
+
+A Sketch provide some helper allowing you to control your generated test data.
+
+- [`model`](fundamentals/sketch?id=model-optionaloverrideslttgt) to read and configure all model properties.
+- [`set`](fundamentals/sketch?id=setmapfn) to override a certain value of a model no matter how deeply it is nested
+in the object structure
+- [`get`](fundamentals/sketch?id=getprojectorfn) to query a certain value from the model.
 
 ### `model({}: optionalOverrides<T>)`
 
+Calling `model()` will yield the generated data or instance of your data model.
+
+```ts
+const product = Kentan.sketch(ForProduct).model(); // instance of class Product
+```
+
+If you need to adjust the test data for a certain test you also can pass
+overrides.
+It is up to you if you want to override all properties or just a subset.
+
+```ts
+const product = Kentan.sketch(ForProduct).model({ priceInDollars: 999 });
+```
+
 ### `set(mapFn)`
+
+The function `set` becomes pretty handy if you deal with large and deep nested
+object trees.
+For certain tests you only need to adjust a certain piece of an object tree.
+Instead of calling `model` over and over again you can pass a mapping function
+to set the desired values.
+The following example shows you how `set` works.
+
+```ts
+/*
+ * The following class is the base of the Sketch used in this example
+ * 
+ * class Structure {
+ *   some: { thing: { nested: { inside: string } } };
+ * }
+ */
+
+const sketch = Kentan.sketch(ForStructure);
+
+const structure = sketch
+  .set(m => (m.some.thing.nested.inside = 'some value'))
+  .model();
+```
 
 ### `get(projectorFn)`
 
+The counterpart to [`set`](fundamentals/sketch?id=setmapfn) is the `get`
+function.
+Some times you want to read a property of the generated data for doing
+assertions in you tests.
+You achieve this by passing a projection function.
+The next example shows you how this works.
 
+```ts
+/*
+ * The following class is the base of the Sketch used in this example
+ * 
+ * class Structure {
+ *   some: { thing: { nested: { inside: string } } };
+ * }
+ */
 
+const sketch = Kentan.sketch(ForStructure);
+
+const prop = sketch.get(m => m.some.thing.nested.inside));
+```

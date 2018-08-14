@@ -354,7 +354,7 @@ The Sketch contains two more helpers providing even more comfort to maintain
 your test data.
 
 ?> If you want to dive deeper, you can learn more about the Sketch API reading 
-the article about [get]() and [set]().
+the article about [get](fundamentals/sketch?id=getprojectorfn) and [set](fundamentals/sketch?id=setmapfn).
 
 Rock On & Code 
 
