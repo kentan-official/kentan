@@ -21,7 +21,7 @@
     "release": "lerna publish"
   },
   "devDependencies": {
-    "lerna": "^3.0.0-rc.0",
+    "lerna": "^3.0.4",
     "live-server": "^1.2.0"
   },
   "repository": {
