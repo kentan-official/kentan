@@ -242,7 +242,7 @@ This also enables us to use all methods of that type as well in our tests.
 
 !> This approach only works if the given model has a constructor **without any
 parameters**. If you need to work with parameterized constructors please refer
-to the article [Use Existing Model Instances](../guide/use-existing-model-instances.md).
+to the article [Use Existing Model Instances](fundamentals/sketch?id=existing-class-instance).
 
 The complete Sketch for the `ShoppingBasket` is shown below.
 Please note that the second parameters adds two products as default values.

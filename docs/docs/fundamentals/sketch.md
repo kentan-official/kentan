@@ -79,6 +79,28 @@ section.
 
 ### Existing Class Instance
 
+Maybe you already use model classes that needs one or more parameters to get
+instantiated.
+Kentan is **not** able to resolve these dependencies automatically.
+In order to create a Sketch you are kindly invited to do the instantiation on you own. :angel:
+
+```ts
+export class Order {
+  constructor(public products: Product[]) {}
+}
+
+export class ForOrder extends Sketch<Order> {
+  private static readonly model = new Order([]);
+  
+  constructor() {
+    super(ForOrder.model);
+  }
+}
+```
+
+> If the model class is more complex, please remember that you can use already
+> existing Sketches to set everything up.
+
 ## Configure Test Data
 
 ### `model({}: optionalOverrides<T>)`
