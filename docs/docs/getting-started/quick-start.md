@@ -44,15 +44,15 @@ npm install --save-dev @kentan-official/core
 
 ## The Problem
 
-Now it is time to open your favorite **code editor**.
-The picture below displays the folder structure of the quick-start project.
-Now we want check if there is something we can do better in `src/product.spec.ts`.
+Now it is time to open your favourite**code editor**.
+The picture below displays the folder structure of the quickstart project.
+Now we want to check if there is something we can do better in `src/product.spec.ts`.
 
 ![test result](assets/quick-start-files.png)
 
 Although the test is a very simple one, it should give you the idea of the problem we are facing if the test gets a little more complex.
-Setting up the test data already costs a lot lines of code.
-At that very moment we are not able to reuse that piece of test data in other unit tests.
+Setting up the test data already costs a lot of lines of code.
+At that very moment, we are not able to reuse that piece of test data in other unit tests.
 
 ```ts
 // src/product.spec.ts
@@ -72,7 +72,7 @@ it('should yield the actual price', () => {
 ```
 
 !> We need to simplify the way how we arrange test data.
-Even in this case Kentan will help us to tidy up this unit test.
+Even in this case, Kentan will help us to tidy up this unit test.
 
 ## The First Sketch
 
@@ -87,11 +87,11 @@ mkdir -p src/test/sketches && touch src/test/sketches/product.sketch.ts
 ![test result](assets/first-sketch.png)
 
 ?> All Sketches of your application are saved in one directory.
-This makes it easy for your team mates to discover and reuse them.
+This makes it easy for your teammates to discover and reuse them.
 
 ### What is a Sketch?
 
-A Sketch knows how to construct a `Model` and provides default data.
+The Sketch knows how to construct a `Model` and provides default data.
 This enables you to use the generated data right away in your tests.
 If you need to change some properties for certain test cases, you can use
 a built-in API to achieve this.
@@ -160,9 +160,9 @@ Look what happens to our unit test.
     });
 ```
 
-Basically the simple test gets even more simple.
+Basically, the simple test gets even more simple.
 The `it`-block just contains _three_ lines of code.
-To retrieve the from the Sketch `Product` the method `model()` is called.
+To retrieve them from the Sketch `Product` the method `model()` is called.
 
 The next section will show how you can use `model()` to override the
 default test data.
@@ -207,13 +207,13 @@ it('should update the total price', () => {
 
 Now it becomes more obvious how easy you can bring back readability to your
 tests using Kentan.
-In **Line 3** the method `model` takes an parameter.
+In **Line 3** the method `model` takes a parameter.
 This API allows you to easily override the defaults of a Sketch.
 
-Now the code look better than before.
+Now the code looks better than before.
 But we can do a little bit better.
-In comparison to `Product` the `ShoppingBasket` is a class.
-But no worries. Next we instruct Kentan to provide a Sketch by a given class.
+In comparison to `Product`, the `ShoppingBasket` is a class.
+But no worries. Next, we instruct Kentan to provide a Sketch by a given class.
 
 ?> Kentan also can generate a Sketch from a class.
 
@@ -228,7 +228,7 @@ touch src/test/sketches/shopping-basket.sketch.ts
 ```
 
 To allow Kentan to create an instance of the `ShoppingBasket` for us, we have
-to pass the class token as first parameter to the `super`-call.
+to pass the class token as the first parameter to the `super`-call.
 As second parameter we can provide optional default data.
 
 ```ts
@@ -245,7 +245,7 @@ parameters**. If you need to work with parameterized constructors please refer
 to the article [Use Existing Model Instances](fundamentals/sketch?id=existing-class-instance).
 
 The complete Sketch for the `ShoppingBasket` is shown below.
-Please note that the second parameters adds two products as default values.
+Please note that the second parameter adds two products as default values.
 This is easily achieved by using the Sketch `ForProduct` inside 
 `ForShoppingBasket`.
 This approach is also called _Sketch Composition_.
@@ -289,7 +289,7 @@ we continue to the final optimization we can achieve with Kentan.
 ...
 ```
 
-In the last step we simplify the generation of the products list to reduce the complexity
+In the last step, we simplify the generation of the products list to reduce the complexity
 of our Sketch `ForShoppingBasket`.
 
 ## Take A Sketch List
@@ -322,10 +322,10 @@ Calling `models` yields the desired list of type `Product[]`.
 We now create two products with the same `id` because we just use the default
 values of the Sketch `ForProduct`.
 
-Luckily the methode `models()` takes an optional parameter where we can pass
+Luckily the method `models()` takes an optional parameter where we can pass
 generator functions to create unique values for each item in the list.
 You can provide a generator function for each property of a model.
-A generator functions get the `index` of the respective item.
+Generator functions get the `index` of the respective item.
 
 The following snippet shows how you can generate a different `id` for each 
 `Product`.
@@ -343,13 +343,13 @@ The following snippet shows how you can generate a different `id` for each
 
 Passing this generator function you will get the following id properties
 `my-id-0`, `my-id-1`.
-You see, Kentan really tries to give you the full control over you test data.
+You see, Kentan really tries to give you the full control over your test data.
 
 ## Conclusion
 
 Congratulations, you successfully went through the Quick Start Guide.
-Hopefully you find this beneficial for you project.
-There are still a few feature we have not covered yet.
+Hopefully, you find this beneficial for your project.
+There are still a few features we have not covered yet.
 The Sketch contains two more helpers providing even more comfort to maintain 
 your test data.
 
@@ -357,4 +357,3 @@ your test data.
 the article about [get](fundamentals/sketch?id=getprojectorfn) and [set](fundamentals/sketch?id=setmapfn).
 
 Rock On & Code 
-
