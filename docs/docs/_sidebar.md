@@ -4,7 +4,6 @@
 - **Fundamentals**
   - [Sketch](fundamentals/sketch.md)
 - **Guide**
-  - [Use Existing Model Instances](guide/use-existing-model-instances.md)
   - [Generate Random Values](guide/generate-random-values.md)
 - **Angular CLI**
   - [Generate Sketches automatically](angular-cli/generate-sketches-automatically.md)
