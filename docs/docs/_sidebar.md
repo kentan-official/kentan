@@ -6,4 +6,4 @@
 - **Guide**
   - [Generate Random Values](guide/generate-random-values.md)
 - **Angular CLI**
-  - [Generate Sketches automatically](angular-cli/generate-sketches-automatically.md)
+  - [Schematics](angular-cli/schematics.md)

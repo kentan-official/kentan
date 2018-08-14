@@ -1,4 +1,5 @@
-# Generate Sketches automatically
+# Schematics
+> Generate Sketches automatically
 
 ## Setup
 
