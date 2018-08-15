@@ -15,7 +15,7 @@ See the [Quick Start](getting-started/quick-start.md) for more details.
 - [Sketch](fundamentals/sketch.md) creating reusable test data
 - [Generator](getting-started/quick-start?id=take-a-sketch-list) to build configurable Sketch-Lists
 - [Helpers](fundamentals/sketch?id=handle-sketch-data) to configure Sketches
-- [Tooling for Angular](angular-cli/schematics.md) generating Sketchs automaticallu
+- [Tooling for Angular](angular-cli/schematics.md) generating Sketchs automatically
 
 ## Feedback
 
