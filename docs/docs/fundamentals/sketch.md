@@ -13,6 +13,8 @@ There three different ways to create a Sketch in Kentan:
 
 ### Interface
 
+#### Creation
+
 If you want to create a Sketch based on an interface you create a new class
 that extends Kentan's class called Sketch.
 
@@ -42,6 +44,9 @@ export class ForProduct extends Sketch<Product> {
 ```
 
 The `super`-call is used to provide the default data.
+
+#### Usage
+
 Now we can use Kentan's factory to create the Sketch.
 
 ```ts
