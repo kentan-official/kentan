@@ -1,7 +1,7 @@
 # Sketch
 
 ?> This article is a reference for the `Sketch`.
-If you want to get started with Kentan please have a look at the [Quick Start](../getting-started/quick-start.md)
+If you want to get started with Kentan please have a look at the [Quick Start](getting-started/quick-start.md)
 
 ## Create a Sketch
 
