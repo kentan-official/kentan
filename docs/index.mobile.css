@@ -361,6 +361,11 @@
 
 @media (min-width: 1024px) {
 
+  .kentan-theme body.cover-page {
+    /* fixes scrolling because of absolute positioned background poster on Safari */
+    overflow: hidden;
+  }
+
   .kentan-theme .background-poster {
     height: 113.4vh;
   }
