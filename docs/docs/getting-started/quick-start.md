@@ -338,12 +338,12 @@ The following snippet shows how you can generate a different `id` for each
    products: Kentan.sketch(ForProduct)
      .take(2)
 -    .models()
-+    .models({ id: index => `my-id-${index}` })
++    .models({ id: index => (index + 1) })
 ...
 ```
 
 Passing this generator function you will get the following id properties
-`my-id-0`, `my-id-1`.
+`1`, `2`.
 You see, Kentan really tries to give you the full control over your test data.
 
 ## Conclusion
