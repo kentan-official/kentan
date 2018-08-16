@@ -286,6 +286,7 @@ we continue to the final optimization we can achieve with Kentan.
 - const shoppingBasket = new ShoppingBasket();
 
 - shoppingBasket.products = [xBox, playStation];
++ shoppingBasket.remove(shoppingBasket.products[0]);
 ...
 ```
 
