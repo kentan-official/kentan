@@ -44,7 +44,7 @@ npm install --save-dev @kentan-official/core
 
 ## The Problem
 
-Now it is time to open your favourite**code editor**.
+Now it is time to open your favourite **code editor**.
 The picture below displays the folder structure of the quickstart project.
 Now we want to check if there is something we can do better in `src/product.spec.ts`.
 
