@@ -1,4 +1,4 @@
-## What is Kentan?
+# What is Kentan?
 
 Kentan allows you to create, organize and compose test data.
 Once this is done it simplifies your test arrangements.

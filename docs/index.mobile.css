@@ -289,8 +289,8 @@
   background-color: var(--accent);
   content: '';
 
-  -webkit-clip-path: url(#petal-clip);
-  clip-path: url(#petal-clip);
+  -webkit-clip-path: url(#left-petal-clip);
+  clip-path: url(#left-petal-clip);
 }
 
 .kentan-theme article ul {
@@ -312,6 +312,51 @@
 
   -webkit-clip-path: url(#stem-clip);
   clip-path: url(#stem-clip);
+}
+
+.kentan-theme h1 a:not(.app-name-link) {
+  display: flex;
+  align-items: center;
+  text-decoration-color: var(--primary);
+}
+
+.kentan-theme h1 a:not(.app-name-link) span {
+  color: var(--accent);
+  font-size: 2rem;
+}
+
+.kentan-theme h1 a:not(.app-name-link)::before {
+  margin-right: 0.5rem;
+
+  -webkit-clip-path: url(#left-petal-clip);
+  clip-path: url(#left-petal-clip);
+}
+
+.kentan-theme h1 a:not(.app-name-link)::after {
+  margin-left: 0.5rem;
+  
+  -webkit-clip-path: url(#right-petal-clip);
+  clip-path: url(#right-petal-clip);
+}
+
+.kentan-theme h1 a:not(.app-name-link)::before,
+.kentan-theme h1 a:not(.app-name-link)::after {
+  display: inline-block;
+  vertical-align: middle;
+  height: 1.25rem;
+  width: 1.25rem;
+  background-color: var(--primary);
+  content: '';
+}
+
+.kentan-theme h2 a span {
+  color: var(--primary);
+  font-size: 1.75rem;
+}
+
+.kentan-theme h3 a span {
+  color: var(--secondary-text);
+  font-size: 1.5rem;
 }
 
 @media (min-width: 1024px) {
