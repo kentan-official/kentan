@@ -332,15 +332,7 @@
   clip-path: url(#left-petal-clip);
 }
 
-.kentan-theme h1 a:not(.app-name-link)::after {
-  margin-left: 0.5rem;
-  
-  -webkit-clip-path: url(#right-petal-clip);
-  clip-path: url(#right-petal-clip);
-}
-
-.kentan-theme h1 a:not(.app-name-link)::before,
-.kentan-theme h1 a:not(.app-name-link)::after {
+.kentan-theme h1 a:not(.app-name-link)::before {
   display: inline-block;
   vertical-align: middle;
   height: 1.25rem;
