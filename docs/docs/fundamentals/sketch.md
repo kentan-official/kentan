@@ -95,10 +95,10 @@ export class Order {
 }
 
 export class ForOrder extends Sketch<Order> {
-  private static readonly model = new Order([]);
+  private static readonly instance = new Order([]);
   
   constructor() {
-    super(ForOrder.model);
+    super(ForOrder.instance);
   }
 }
 ```
