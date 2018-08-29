@@ -108,7 +108,7 @@ export class ForOrder extends Sketch<Order> {
 
 ## Handle Sketch Data
 
-The Sketch provides some helper allowing you to control your generated test data.
+The Sketch provides some helpers allowing you to control your generated test data.
 
 - [`model`](fundamentals/sketch?id=model-optionaloverrideslttgt) to read and configure all model properties.
 - [`set`](fundamentals/sketch?id=setmapfn) to override a certain value of a model no matter how deeply it is nested
