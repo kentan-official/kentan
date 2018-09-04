@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.6"></a>
+## [2.0.6](https://github.com/kentan-official/kentan/compare/v2.0.5...v2.0.6) (2018-09-04)
+
+
+### Bug Fixes
+
+* **schematics:build:** target right dist files avoiding empty package to be published ([7e5bc9a](https://github.com/kentan-official/kentan/commit/7e5bc9a))
+
+
+
+
+
 <a name="2.0.5"></a>
 ## [2.0.5](https://github.com/kentan-official/kentan/compare/v2.0.4...v2.0.5) (2018-09-04)
 
