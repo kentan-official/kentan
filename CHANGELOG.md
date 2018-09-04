@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.4"></a>
+## [2.0.4](https://github.com/kentan-official/kentan/compare/v2.0.3...v2.0.4) (2018-09-04)
+
+
+### Bug Fixes
+
+* **coverPage:** hide body overflow to remove scrolling ([4e00c6b](https://github.com/kentan-official/kentan/commit/4e00c6b))
+* **docs:** adjust link to quick-start ([4e247f3](https://github.com/kentan-official/kentan/commit/4e247f3))
+* **docs:** fix indentation ([19c3187](https://github.com/kentan-official/kentan/commit/19c3187))
+* **docs:mobile:** reposition buttons ([757f4c6](https://github.com/kentan-official/kentan/commit/757f4c6))
+* **schematics:** update import path of kentan core package ([1b622ba](https://github.com/kentan-official/kentan/commit/1b622ba))
+
+
+### Features
+
+* **coverPage:** apply new design for desktop ([4b6e288](https://github.com/kentan-official/kentan/commit/4b6e288))
+* **headlines:** add consistent headline theme ([5b33f6d](https://github.com/kentan-official/kentan/commit/5b33f6d))
+
+
+
+
+
 <a name="2.0.3"></a>
 ## [2.0.3](https://github.com/kentan-official/kentan/compare/v2.0.2...v2.0.3) (2018-08-12)
 
