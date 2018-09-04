@@ -1,4 +1,4 @@
-import { Sketch } from 'kentan';
+import { Sketch } from '@kentan-official/core';
 <% if (modelImportPath(sketch)) { %>
 import { <%= classify(name(sketch)) %> } from '<%= modelImportPath(sketch) %>';
 <% } %>
