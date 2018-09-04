@@ -6,9 +6,6 @@
     "type": "git",
     "url": "https://github.com/kentan-official/kentan"
   },
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "build:prod": "ts-node -P ./build/tsconfig.json ./build",
     "build:watch": "nodemon",
