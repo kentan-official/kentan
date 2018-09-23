@@ -1,6 +1,6 @@
 import { clean, copy, npmRun } from './lib';
 
-clean('./dist/*')
+clean('./dist')
   .then(() => npmRun('tsc:prod'))
   .then(() =>
     copy([
