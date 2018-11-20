@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.8"></a>
+## [2.0.8](https://github.com/kentan-official/kentan/compare/v2.0.7...v2.0.8) (2018-11-20)
+
+
+### Bug Fixes
+
+* **core:** allow creation of lists based in an interface ([cf17cd2](https://github.com/kentan-official/kentan/commit/cf17cd2))
+
+
+
+
+
 <a name="2.0.7"></a>
 ## [2.0.7](https://github.com/kentan-official/kentan/compare/v2.0.6...v2.0.7) (2018-09-23)
 
