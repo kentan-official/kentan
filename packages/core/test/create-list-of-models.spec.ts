@@ -1,41 +1,42 @@
 import { Kentan, Sketch } from '../src/core';
 
-class Empty {
+class StringId {
   id: string;
+  name: string;
 }
 
-class EmptyNumericId {
+class NumericId {
   id: number;
 }
 
-class ForEmpty extends Sketch<Empty> {
+class ForStringId extends Sketch<StringId> {
   constructor() {
-    super(Empty);
+    super(StringId, { id: '1', name: 'Greg' });
   }
 }
-class ForEmptyNumericId extends Sketch<EmptyNumericId> {
+class ForNumericId extends Sketch<NumericId> {
   constructor() {
-    super(EmptyNumericId);
+    super(NumericId);
   }
 }
 
 describe('When a list of test data is needed', () => {
   it('should be possible to generate a list of sketches', () => {
-    const sketches = Kentan.sketch(ForEmpty).take(2);
+    const sketches = Kentan.sketch(ForStringId).take(2);
     expect(sketches.all().length).toBe(2);
   });
 
   it('should allow to get the models from the sketch list', () => {
-    const models = Kentan.sketch(ForEmpty)
+    const models = Kentan.sketch(ForStringId)
       .take(1)
       .models();
 
-    expect(models[0]).toBeInstanceOf(Empty);
+    expect(models[0]).toBeInstanceOf(StringId);
   });
 
   it('should be allowed to pass a factory for a property', () => {
     const id = '12-34-56-78';
-    const models = Kentan.sketch(ForEmpty)
+    const models = Kentan.sketch(ForStringId)
       .take(1)
       .models({
         id: () => id
@@ -44,11 +45,22 @@ describe('When a list of test data is needed', () => {
     expect(models[0].id).toBe(id);
   });
 
+  it('should preserve existing properties', () => {
+    const id = '12-34-56-78';
+
+    const model = Kentan.sketch(ForStringId).model();
+    const models = Kentan.sketch(ForStringId)
+      .take(1)
+      .models({ id: () => id });
+
+    expect(models[0].name).toBe(model.name);
+  });
+
   it('should pass the index of the respective model', () => {
     const id = '12-34-56-78-';
     const expectedId = '12-34-56-78-0';
 
-    const models = Kentan.sketch(ForEmpty)
+    const models = Kentan.sketch(ForStringId)
       .take(1)
       .models({
         id: index => `${id}${index}`
@@ -61,7 +73,7 @@ describe('When a list of test data is needed', () => {
     const id = '12-34-56-78-';
     const expectedId = '12-34-56-78-2';
 
-    const models = Kentan.sketch(ForEmpty)
+    const models = Kentan.sketch(ForStringId)
       .take(3)
       .models({
         id: index => `${id}${index}`
@@ -71,7 +83,7 @@ describe('When a list of test data is needed', () => {
   });
 
   it('should pass different indexes to elements in list', () => {
-    const models = Kentan.sketch(ForEmpty)
+    const models = Kentan.sketch(ForStringId)
       .take(3)
       .models({
         id: index => index.toString()
@@ -83,7 +95,7 @@ describe('When a list of test data is needed', () => {
   });
 
   it('should pass different numeric indexes to elements in list', () => {
-    const models = Kentan.sketch(ForEmptyNumericId)
+    const models = Kentan.sketch(ForNumericId)
       .take(3)
       .models({
         id: index => index

@@ -16,7 +16,7 @@ export declare type ModelFactory<T> = T;
 export class Sketch<T> implements OverwritableSketch<T> {
   private _createModel: () => T;
 
-  constructor(private _token: T | Constructable<T>, defaults?: Partial<T>) {
+  constructor(private _token: T | Constructable<T>, defaults: Partial<T> = {}) {
     if (typeof _token === 'object') {
       this._createModel = this._createFromInstance(_token, defaults);
     } else {
@@ -57,7 +57,9 @@ export class Sketch<T> implements OverwritableSketch<T> {
   }
 
   private _createFromInstance(model: T, _defaults?: Partial<T>): () => T {
-    return () => Object.assign(Object.create(model as Object), _defaults);
+    return this._hasMethods(model)
+      ? () => Object.assign(Object.create(model as Object), _defaults)
+      : () => Object.assign({}, model, _defaults);
   }
 
   private _constructInstance(
@@ -74,5 +76,15 @@ export class Sketch<T> implements OverwritableSketch<T> {
     } catch (err) {
       throw new Error(`Kentan: ${err.message}`);
     }
+  }
+
+  private _hasMethods(target: any) {
+    for (let property in target) {
+      if (typeof target[property] === 'function') {
+        return true;
+      }
+    }
+
+    return false;
   }
 }
